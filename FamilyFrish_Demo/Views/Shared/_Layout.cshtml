@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family friss demo app</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/LoginForm.css")
+
+    @Scripts.Render("~/Scripts/angular.min.js")
+    @Scripts.Render("~/myScripts/Module.js")
+    @Scripts.Render("~/myScripts/Service.js")
+    @Scripts.Render("~/myScripts/Controller.js")
+</head>
+<body ng-app="demoApp">
+
+    <header>
+        <div class="row">
+            <div class="col-1">
+                <img src="~/Img/logo.jpg" style="height:50px; width:auto;"/>
+            </div>
+        </div>
+    </header>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
