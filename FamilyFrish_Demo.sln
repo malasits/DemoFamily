@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyFrish_Demo", "FamilyFrish_Demo\FamilyFrish_Demo.csproj", "{34530DE1-8661-4851-905B-76A7915587ED}"
 EndProject
@@ -20,7 +20,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		LessCompiler = 34530de1-8661-4851-905b-76a7915587ed
 		SolutionGuid = {EE4AE405-C800-432F-BC7D-EE70F2DC7AE9}
+		LessCompiler = 34530de1-8661-4851-905b-76a7915587ed
 	EndGlobalSection
 EndGlobal

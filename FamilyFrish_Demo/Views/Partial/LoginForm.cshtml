@@ -1,32 +1,66 @@
-﻿<div class="col-12" id="LoginFormContainer">
-    <form>
+﻿@using FamilyFrish_Demo.Resources;
+
+<div class="col-12" id="LoginFormContainer">
+    <form id="LoginForm" name="LoginForm" novalidate ng-submit="LoginFormSubmit(LoginForm.$valid)">
+
+        @*Username*@
         <div class="row">
             <div class="col-4 text-right">
-                <label for="inputTextUsername">Felhasználónév:</label>
+                <label id="lblUsername" name="lblUsername" for="inputTextUsername">@LoginForm.Username</label>
             </div>
             <div class="col-8">
-                <input type="text" class="form-control text-center" ng-required="true"/>
+                <input id="inputUsername" name="inputUsername" type="text" class="form-control text-center" ng-model="Username" ng-required="true" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-8">
+                <div ng-messages="LoginForm.inputUsername.$error" ng-if="LoginForm.inputUsername.$touched || (LoginForm.inputUsername.$invalid && !LoginFormValid)" class="text-danger" role="alert">
+                    <div ng-message="required">@LoginForm.ErrorUserName</div>
+                </div>
             </div>
         </div>
 
+        @*Password*@
         <div class="row">
             <div class="col-4 text-right">
-                <label for="inputTextPassword">Jelszó:</label>
+                <label id="lblPassword" name="lblPassword" for="inputTextPassword">@LoginForm.Password</label>
             </div>
             <div class="col-8">
-                <input type="password" class="form-control text-center" ng-required="true"/>
+                <input id="inputPassword" name="inputPassword" type="password" class="form-control text-center" ng-model="Password" ng-required="true" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-8">
+                <div ng-messages="LoginForm.inputPassword.$error" ng-if="LoginForm.inputPassword.$touched || (LoginForm.inputPassword.$invalid && !LoginFormValid)" class="text-danger" role="alert">
+                    <div ng-message="required">@LoginForm.ErrorPassword</div>
+                </div>
             </div>
         </div>
 
+        @*Error Messages After Login*@
+        <div class="row">
+            <div class="col-12 text-center">
+                @*<div uib-alert dismiss-on-timeout="{{alertsTimeout}}" ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>*@
+                <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')">{{alert.msg}}</div>
+            </div>
+        </div>
+
+
+
+        @*Login button*@
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                <button type="submit" class="btn btn-secondary btn-block">
-                    Bejelentkezés
-                    <span ng-show="false" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <button id="btnLogin" type="submit" class="btn btn-secondary btn-block" ng-disabled="DisableLoginButton">
+                    @LoginForm.Login
+                    <span id="btnLoginSpinner" ng-show="ShowLoginSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 </button>
             </div>
             <div class="col-2"></div>
         </div>
+
     </form>
+
 </div>

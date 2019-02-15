@@ -1,4 +1,7 @@
-﻿@headerBackgroundColor: #0d0d0d;
+﻿/*@headerBackgroundColor: #0d0d0d;*/
+@headerBackgroundColor: gray;
+
+@headerMessageColor: white;
 
 body {
     padding-left: 20px;
@@ -15,9 +18,8 @@ header{
     margin-bottom:10px;
 }
 
-.alert {
-    position: absolute;
-    top: 15px;
-    left:30px;
-    right:30px;
+#HeaderMessage{
+    padding-top:13px;
+    margin-right:2px;
+    color:@headerMessageColor;
 }

@@ -6,25 +6,46 @@
     <title>Family friss demo app</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/LoginForm.css")
+    @Styles.Render("~/Content/Site.css")
+
 
     @Scripts.Render("~/Scripts/angular.min.js")
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    @Scripts.Render("~/Scripts/angular-messages.min.js")
+    <script src="~/Scripts/angular-translate.min.js"></script>
+    <script src="~/Scripts/i18n/angular-locale_FamilyFriss_hu.js"></script>
+
     @Scripts.Render("~/myScripts/Module.js")
     @Scripts.Render("~/myScripts/Service.js")
     @Scripts.Render("~/myScripts/Controller.js")
 </head>
-<body ng-app="demoApp">
+<body ng-app="demoApp" ng-controller="demoController">
 
-    <header>
-        <div class="row">
-            <div class="col-1">
-                <img src="~/Img/logo.jpg" style="height:50px; width:auto;"/>
+    <div id="Wrapper" style="display:none;">
+        <header>
+            <div class="row">
+                <div class="col-2">
+                    @*<img src="~/Img/logo.jpg" style="height:50px; width:auto;"/>*@
+                </div>
+                <div id="HeaderMessage" class="col-10 text-right">
+                    {{HeaderMessage}}
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <div class="container body-content">
-        @RenderBody()
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+
     </div>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("Wrapper").style.display = "block";
+        }
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
