@@ -157,6 +157,12 @@
     <Content Include="Content\LoginForm.min.css">
       <DependentUpon>LoginForm.css</DependentUpon>
     </Content>
+    <Content Include="Content\NavigationForm.css">
+      <DependentUpon>NavigationForm.less</DependentUpon>
+    </Content>
+    <Content Include="Content\NavigationForm.min.css">
+      <DependentUpon>NavigationForm.css</DependentUpon>
+    </Content>
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -240,6 +246,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Content\NavigationForm.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1019,9 +1026,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Partial\demoPartial.cshtml" />
     <Content Include="Views\Partial\LoginForm.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Partial\NavigationForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

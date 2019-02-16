@@ -7,6 +7,7 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/LoginForm.css")
     @Styles.Render("~/Content/Site.css")
+    <link href="~/Content/NavigationForm.css" rel="stylesheet" />
 
 
     @Scripts.Render("~/Scripts/angular.min.js")
@@ -25,14 +26,15 @@
 
     <div id="Wrapper" style="display:none;">
         <header>
-            <div class="row">
-                <div class="col-2">
-                    @*<img src="~/Img/logo.jpg" style="height:50px; width:auto;"/>*@
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <img src="~/Img/logo.jpg"/>
                 </div>
-                <div id="HeaderMessage" class="col-10 text-right">
+                <div id="HeaderMessage" class="nav-item">
                     {{HeaderMessage}}
+                    @*Ide kell majd a kijelentkező gomb*@
                 </div>
-            </div>
+            </nav>
         </header>
 
         <div class="container body-content">

@@ -1,12 +1,24 @@
 ﻿demoApp.controller('demoController', function ($scope, $document, $window, $log, demoService, $rootScope, $translate, $filter) {
 
     //****************************************************/
-    //*   Alert messages to application                  */
+    //*   Init variables                                 */
     //****************************************************/
+    //Variables for login form
+    $scope.LoginFormValid = true;
+    $scope.ShowLoginSpinner = false;
+    $scope.DisableLoginButton = false;
+    $scope.InvalidUser = false;
+    $scope.InvalidPremission = false;
+
+    //Variables for alert messages
     $rootScope.alertsTimeout = "10000";
     $rootScope.alerts = [];
     $rootScope.modalAlerts = [];
 
+
+    //****************************************************/
+    //*   Alert messages to application                  */
+    //****************************************************/
     $rootScope.closeAlert = function (index) {
         $rootScope.alerts.splice(index, 1);
     };
@@ -24,13 +36,7 @@
 
     //
     $scope.HeaderMessage = $filter('translate')('LoginHeaderMessage');
-
-    //Variables for login form
-    $scope.LoginFormValid = true;
-    $scope.ShowLoginSpinner = false;
-    $scope.DisableLoginButton = false;
-    $scope.InvalidUser = false;
-    $scope.InvalidPremission = false;
+    
 
     //*******************************************/
     //*   Login to application                  */
