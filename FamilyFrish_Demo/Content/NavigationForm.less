@@ -1,4 +1,22 @@
-﻿BreadCrumbNavbar {
-    margin-left: 15px;
-    margin-right: 15px;
+﻿@backgroundColor: gray;
+@fontColor: white;
+
+#BreadCrumbNavbar {
+    padding-left:0px;
+    padding-right:0px;
+
+}
+
+.breadcrumb {
+    background-color: @backgroundColor !important;
+    color: @fontColor !important;
+    border-radius: 0px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: @fontColor !important;
+}
+
+.breadcrumb a {
+    color: @fontColor !important;
 }

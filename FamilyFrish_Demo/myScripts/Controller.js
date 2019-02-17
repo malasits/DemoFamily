@@ -15,6 +15,9 @@
     $rootScope.alerts = [];
     $rootScope.modalAlerts = [];
 
+    //Variables for navigaion form
+    $scope.NavItems = ["Home", "Library", "Data", "Menü"];
+
 
     //****************************************************/
     //*   Alert messages to application                  */
@@ -65,6 +68,25 @@
         }
         else {
             $scope.LoginFormValid = false;
+        }
+    };
+
+    //****************************************************/
+    //*   Controll navigation items                      */
+    //****************************************************/
+    //$scope.$watch('NavItems', function (newValue, oldValue) {
+    //    if (newValue) {
+    //        //angular.forEach($scope.RefreshmentProducts, function (model) {
+    //        //});
+    //        var id = 'nav-'$scope.NavItems[$scope.NavItems.length];
+    //        angular.element(document.querySelector('#div1')).addClass("active");
+    //    }
+    //});
+    $scope.ClickOnMenuItem = function (item) {
+        for (var i = 0; i < $scope.NavItems; i++) {
+            if ($scope.NavItems[i] === item) {
+                angular.element(document.querySelector('nav-' + item)).addClass("active");
+            }
         }
     };
 });
