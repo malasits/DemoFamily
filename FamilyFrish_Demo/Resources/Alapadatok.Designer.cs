@@ -88,11 +88,38 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rögzítés bezárása.
+        /// </summary>
+        public static string InventoryRecordClose {
+            get {
+                return ResourceManager.GetString("InventoryRecordClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Leltár tervezett vége:.
         /// </summary>
         public static string InventoryRecordEnd {
             get {
                 return ResourceManager.GetString("InventoryRecordEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rögzízés megnyitása.
+        /// </summary>
+        public static string InventoryRecordOpen {
+            get {
+                return ResourceManager.GetString("InventoryRecordOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Státusz:.
+        /// </summary>
+        public static string InventoryState {
+            get {
+                return ResourceManager.GetString("InventoryState", resourceCulture);
             }
         }
         

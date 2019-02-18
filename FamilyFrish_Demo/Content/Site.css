@@ -22,3 +22,13 @@ header img {
   margin-right: 2px;
   color: white;
 }
+.customSpinner {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  vertical-align: text-bottom;
+  border: 0.7em solid black;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+}

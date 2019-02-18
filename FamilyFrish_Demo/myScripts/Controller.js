@@ -35,6 +35,7 @@
         inventoryRecordBegin : "2018.12.27",
         inventoryRecordEnd : "2018.12.28",
         numberOfFixedItems: 56,
+        inventoryState: "Nyitott",
         comment: "A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak."+
         "A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban;"+
         "mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa - könyvet"+ 
@@ -47,7 +48,8 @@
         warehouse: "R1 (Teszt)",
         inventoryRecordBegin: "2018.12.27",
         inventoryRecordEnd: "2018.12.28",
-        numberOfFixedItems: 56,
+        numberOfFixedItems: 15,
+        inventoryState: "Zárt",
         comment: "asdasA Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak." +
             "A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban;" +
             "mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa - könyvet" +

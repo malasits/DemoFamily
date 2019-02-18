@@ -126,8 +126,17 @@
   <data name="InventoryRecordBegin" xml:space="preserve">
     <value>Leltár kezdete:</value>
   </data>
+  <data name="InventoryRecordClose" xml:space="preserve">
+    <value>Rögzítés bezárása</value>
+  </data>
   <data name="InventoryRecordEnd" xml:space="preserve">
     <value>Leltár tervezett vége:</value>
+  </data>
+  <data name="InventoryRecordOpen" xml:space="preserve">
+    <value>Rögzízés megnyitása</value>
+  </data>
+  <data name="InventoryState" xml:space="preserve">
+    <value>Státusz:</value>
   </data>
   <data name="LoginHeaderMessage" xml:space="preserve">
     <value>Bejelentkezés</value>

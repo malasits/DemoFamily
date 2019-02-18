@@ -1,5 +1,22 @@
-﻿<div class="col-12" id="inventoryRecordingContainer">
+﻿@using FamilyFrish_Demo.Resources;
+
+<div class="col-12" id="inventoryRecordingContainer">
     <div class="row inventoryItem" ng-repeat="item in InventoryModelList" ng-click="AddNewMenuItem()">
+        
+        <div class="col-12 inventoryHeader">
+            <span>@Alapadatok.InventoryState</span>
+            <span class="inventoryLabel">{{item.inventoryState}}</span>
+        </div>
+
+        <div class="col-6">
+            <button class="btn btn-danger">@Alapadatok.InventoryRecordClose</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-success">@Alapadatok.InventoryRecordOpen</button>
+        </div>
+
+        <div class="col-12 inventoryBorder"></div>
+
         <div class="col-6">
             <span>{{inventoryIdLabel}} </span>
             <br />
@@ -19,15 +36,20 @@
             <span class="inventoryLabel">{{item.inventoryRecordBegin}}</span>
         </div>
         <div class="col-6">
-            <span>{{inventoryRecordEndLabel}} </span> 
+            <span>{{inventoryRecordEndLabel}} </span>
             <br />
             <span class="inventoryLabel">{{item.inventoryRecordEnd}} </span>
         </div>
-        <div class="col-6">
+
+        <div class="col-12 inventoryBorder"></div>
+
+        <div class="col-12">
             <span>{{numberOfFixeditemsIdLabel}} </span>
-            <br />
             <span class="inventoryLabel">{{item.numberOfFixedItems}} </span>
         </div>
+
+        <div class="col-12 inventoryBorder"></div>
+
         <div class="col-12">
             <span>{{inventoryCommentLabel}} </span>
             <br />

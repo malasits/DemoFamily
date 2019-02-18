@@ -7,6 +7,7 @@ var translationhu = {
   "ErrorInvalidPremission": "Nincs jogosultsága belépni a rendszerbe!",
   "SuccessLogin": "Sikeres bejelentkezés!",
   "ErrorInvalUduser": "Érvénytelen felhasználó vagy jelszó!",
+  "InventoryRecordClose": "Rögzítés bezárása",
   "InventoryRecordBegin": "Leltár kezdete:",
   "NumberOfFixeditems": "Rögzített tételek száma:",
   "Warehouse": "Raktár:",
@@ -14,5 +15,7 @@ var translationhu = {
   "InventoryId": "Leltár azonosító:",
   "LoginHeaderMessage": "Bejelentkezés",
   "StartNavigationValue": "Funkciók",
-  "InventoryRecordEnd": "Leltár tervezett vége:"
+  "InventoryRecordEnd": "Leltár tervezett vége:",
+  "InventoryRecordOpen": "Rögzízés megnyitása",
+  "InventoryState": "Státusz:"
 }
