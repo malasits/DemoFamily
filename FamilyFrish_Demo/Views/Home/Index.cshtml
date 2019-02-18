@@ -4,9 +4,16 @@
         @Html.Partial("~/Views/Partial/NavigationForm.cshtml")
     </div>
 
-    <div class="row">
+    <div class="row" ng-hide="true">
         @Html.Partial("~/Views/Partial/LoginForm.cshtml")
     </div>
 
+    <div class="row" ng-hide="true">
+        @Html.Partial("~/Views/Partial/FunctionsForm.cshtml")
+    </div>
+
+    <div class="row">
+        @Html.Partial("~/Views/Partial/InventoryRecordingForm.cshtml")
+    </div>
 
 </div>

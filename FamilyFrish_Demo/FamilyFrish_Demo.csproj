@@ -151,6 +151,18 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FunctionsForm.css">
+      <DependentUpon>FunctionsForm.less</DependentUpon>
+    </Content>
+    <Content Include="Content\FunctionsForm.min.css">
+      <DependentUpon>FunctionsForm.css</DependentUpon>
+    </Content>
+    <Content Include="Content\InventoryRecordingForm.css">
+      <DependentUpon>InventoryRecordingForm.less</DependentUpon>
+    </Content>
+    <Content Include="Content\InventoryRecordingForm.min.css">
+      <DependentUpon>InventoryRecordingForm.css</DependentUpon>
+    </Content>
     <Content Include="Content\LoginForm.css">
       <DependentUpon>LoginForm.less</DependentUpon>
     </Content>
@@ -247,6 +259,12 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Content\NavigationForm.less" />
+    <Content Include="Content\FunctionsForm.less" />
+    <Content Include="Content\InventoryRecordingForm.less" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1029,6 +1047,8 @@
     <Content Include="Views\Partial\LoginForm.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Partial\NavigationForm.cshtml" />
+    <Content Include="Views\Partial\FunctionsForm.cshtml" />
+    <Content Include="Views\Partial\InventoryRecordingForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

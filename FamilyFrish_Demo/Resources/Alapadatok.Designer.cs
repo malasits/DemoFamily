@@ -61,11 +61,74 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Megjegyzés:.
+        /// </summary>
+        public static string InventoryComment {
+            get {
+                return ResourceManager.GetString("InventoryComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leltár azonosító:.
+        /// </summary>
+        public static string InventoryId {
+            get {
+                return ResourceManager.GetString("InventoryId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leltár kezdete:.
+        /// </summary>
+        public static string InventoryRecordBegin {
+            get {
+                return ResourceManager.GetString("InventoryRecordBegin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leltár tervezett vége:.
+        /// </summary>
+        public static string InventoryRecordEnd {
+            get {
+                return ResourceManager.GetString("InventoryRecordEnd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bejelentkezés.
         /// </summary>
         public static string LoginHeaderMessage {
             get {
                 return ResourceManager.GetString("LoginHeaderMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rögzített tételek száma:.
+        /// </summary>
+        public static string NumberOfFixeditems {
+            get {
+                return ResourceManager.GetString("NumberOfFixeditems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Funkciók.
+        /// </summary>
+        public static string StartNavigationValue {
+            get {
+                return ResourceManager.GetString("StartNavigationValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Raktár:.
+        /// </summary>
+        public static string Warehouse {
+            get {
+                return ResourceManager.GetString("Warehouse", resourceCulture);
             }
         }
     }

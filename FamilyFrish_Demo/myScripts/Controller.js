@@ -16,7 +16,57 @@
     $rootScope.modalAlerts = [];
 
     //Variables for navigaion form
-    $scope.NavItems = ["Home", "Library", "Data", "Menü"];
+    $scope.NavItems = [];
+
+    //Variables for functions form
+    $scope.Functions = ["Leltár rögzítés", "Komissió ellenőrzés"];
+
+    //Variables for inventory recording form
+    $scope.inventoryIdLabel = $filter('translate')('InventoryId');
+    $scope.warehouseLabel = $filter('translate')('Warehouse');
+    $scope.inventoryRecordBeginLabel = $filter('translate')('InventoryRecordBegin');
+    $scope.inventoryRecordEndLabel = $filter('translate')('InventoryRecordEnd');
+    $scope.numberOfFixeditemsIdLabel = $filter('translate')('NumberOfFixeditems');
+    $scope.inventoryCommentLabel = $filter('translate')('InventoryComment');
+
+    $scope.InventoryModel = {
+        inventoryId : "Leltar_TESZT",
+        warehouse : "R1 (Teszt)",
+        inventoryRecordBegin : "2018.12.27",
+        inventoryRecordEnd : "2018.12.28",
+        numberOfFixedItems: 56,
+        comment: "A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak."+
+        "A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban;"+
+        "mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa - könyvet"+ 
+        "vagy szöveget nyomott papírra, ezt használta.Nem csak 5 "
+    };
+    $scope.InventoryModelList = [];
+    //TODO: kikötni az appból
+    $scope.InventoryModel2 = {
+        inventoryId: "Leltar_TESZT",
+        warehouse: "R1 (Teszt)",
+        inventoryRecordBegin: "2018.12.27",
+        inventoryRecordEnd: "2018.12.28",
+        numberOfFixedItems: 56,
+        comment: "asdasA Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak." +
+            "A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban;" +
+            "mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa - könyvet" +
+            "vagy szöveget nyomott papírra, ezt használta.Nem csak 5 "
+    };
+    $scope.InventoryModelList.push($scope.InventoryModel);
+    $scope.InventoryModelList.push($scope.InventoryModel2);
+
+
+
+    //****************************************************/
+    //*   Set Default properties for start               */
+    //****************************************************/
+    $scope.Init = function(){
+        $scope.HeaderMessage = $filter('translate')('LoginHeaderMessage');
+        $scope.NavItems.push($filter('translate')('StartNavigationValue'));
+    };
+    $scope.Init();
+
 
 
     //****************************************************/
@@ -36,10 +86,10 @@
     $rootScope.modalAlert = function (type, msg) {
         $rootScope.modalAlerts.push({ msg: msg, type: type });
     };
-
-    //
-    $scope.HeaderMessage = $filter('translate')('LoginHeaderMessage');
     
+
+
+
 
     //*******************************************/
     //*   Login to application                  */
@@ -71,22 +121,30 @@
         }
     };
 
+
+
+
+
     //****************************************************/
     //*   Controll navigation items                      */
     //****************************************************/
-    //$scope.$watch('NavItems', function (newValue, oldValue) {
-    //    if (newValue) {
-    //        //angular.forEach($scope.RefreshmentProducts, function (model) {
-    //        //});
-    //        var id = 'nav-'$scope.NavItems[$scope.NavItems.length];
-    //        angular.element(document.querySelector('#div1')).addClass("active");
-    //    }
-    //});
     $scope.ClickOnMenuItem = function (item) {
-        for (var i = 0; i < $scope.NavItems; i++) {
+        var index = 0;
+        for (var i = 0; i < $scope.NavItems.length; i++) {
             if ($scope.NavItems[i] === item) {
-                angular.element(document.querySelector('nav-' + item)).addClass("active");
+                //angular.element(document.querySelector('#nav-' + item)).addClass("active");
+                index = i;
+                $scope.NavItems.splice(index+1, $scope.NavItems.length - index);
+                break;
             }
         }
     };
+
+    //****************************************************/
+    //*   Add new navigation items                       */
+    //****************************************************/
+    $scope.AddNewMenuItem = function (newItem) {
+        $scope.NavItems.push(newItem);
+    };
+    
 });

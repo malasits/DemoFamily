@@ -1,0 +1,37 @@
+﻿<div class="col-12" id="inventoryRecordingContainer">
+    <div class="row inventoryItem" ng-repeat="item in InventoryModelList" ng-click="AddNewMenuItem()">
+        <div class="col-6">
+            <span>{{inventoryIdLabel}} </span>
+            <br />
+            <span class="inventoryLabel"> {{item.inventoryId}}</span>
+        </div>
+        <div class="col-6">
+            <span>{{warehouseLabel}} </span>
+            <br />
+            <span class="inventoryLabel">{{item.warehouse}}</span>
+        </div>
+
+        <div class="col-12 inventoryBorder"></div>
+
+        <div class="col-6">
+            <span>{{inventoryRecordBeginLabel}} </span>
+            <br />
+            <span class="inventoryLabel">{{item.inventoryRecordBegin}}</span>
+        </div>
+        <div class="col-6">
+            <span>{{inventoryRecordEndLabel}} </span>
+            <br />
+            <span class="inventoryLabel">{{item.inventoryRecordEnd}} </span>
+        </div>
+        <div class="col-6">
+            <span>{{numberOfFixeditemsIdLabel}} </span>
+            <br />
+            <span class="inventoryLabel">{{item.numberOfFixedItems}} </span>
+        </div>
+        <div class="col-12">
+            <span>{{inventoryCommentLabel}} </span>
+            <br />
+            <textarea class="form-control" rows="5" id="comment" ng-model="item.comment"></textarea>
+        </div>
+    </div>
+</div>

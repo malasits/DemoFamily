@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InventoryComment" xml:space="preserve">
+    <value>Megjegyzés:</value>
+  </data>
+  <data name="InventoryId" xml:space="preserve">
+    <value>Leltár azonosító:</value>
+  </data>
+  <data name="InventoryRecordBegin" xml:space="preserve">
+    <value>Leltár kezdete:</value>
+  </data>
+  <data name="InventoryRecordEnd" xml:space="preserve">
+    <value>Leltár tervezett vége:</value>
+  </data>
   <data name="LoginHeaderMessage" xml:space="preserve">
     <value>Bejelentkezés</value>
+  </data>
+  <data name="NumberOfFixeditems" xml:space="preserve">
+    <value>Rögzített tételek száma:</value>
+  </data>
+  <data name="StartNavigationValue" xml:space="preserve">
+    <value>Funkciók</value>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Raktár:</value>
   </data>
 </root>

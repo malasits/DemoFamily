@@ -1,1 +1,1 @@
-﻿#BreadCrumbNavbar{padding-left:0;padding-right:0}.breadcrumb{background-color:gray !important;color:#fff !important;border-radius:0}.breadcrumb-item+.breadcrumb-item::before{color:#fff !important}.breadcrumb a{color:#fff !important}
+﻿#BreadCrumbNavbar{padding-left:0;padding-right:0}.breadcrumb{background-color:gray !important;color:#fff !important;border-radius:0}.breadcrumb-item+.breadcrumb-item::before{color:#fff !important}breadcrumb-item{cursor:pointer}

@@ -158,7 +158,6 @@ D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.Genera
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.CoreCompileInputs.cache
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.dll
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.pdb
-D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csprojResolveAssemblyReference.cache
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.Resources.Alapadatok.resources
 G:\Programing\C#\DemoFamily\FamilyFrish_Demo\bin\FamilyFrish_Demo.dll.config
 G:\Programing\C#\DemoFamily\FamilyFrish_Demo\bin\FamilyFrish_Demo.dll
@@ -243,3 +242,5 @@ G:\Programing\C#\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.C
 G:\Programing\C#\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.CopyComplete
 G:\Programing\C#\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.dll
 G:\Programing\C#\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.pdb
+D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csprojAssemblyReference.cache
+D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.CopyComplete
