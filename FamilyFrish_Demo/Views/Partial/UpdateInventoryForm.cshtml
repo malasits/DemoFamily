@@ -1,0 +1,48 @@
+﻿<div class="col-12" id="UpdateInventoryContainer">
+    <div class="row" id="UpdateInventoryInputsContainer">
+        <div class="col-9">
+            @*Inputs*@
+            <div class="row">
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Vonalkód">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button" id="button-addon2">Src</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Cikkszám">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button" id="button-addon2">Src</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Cikknév">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button" id="button-addon2">Src</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            @*Update button*@
+            <div class="row">
+                <button class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button" id="button-addon2" disabled>Felvitel</button>
+            </div>
+            @*Search button*@
+            <div class=" row">
+                <button class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button" id="button-addon2">Keresés</button>
+            </div>
+        </div>
+    </div>
+    <div id="UpdateInventrorySpinner" ng-hide="false" class="d-flex justify-content-center">
+        <div class="spinner-border customSpinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>

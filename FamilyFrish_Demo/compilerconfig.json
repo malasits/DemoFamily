@@ -2,5 +2,9 @@
   {
     "outputFile": "Content/InventoryRecordingForm.css",
     "inputFile": "Content/InventoryRecordingForm.less"
+  },
+  {
+    "outputFile": "Content/UpdateInventoryForm.css",
+    "inputFile": "Content/UpdateInventoryForm.less"
   }
 ]
