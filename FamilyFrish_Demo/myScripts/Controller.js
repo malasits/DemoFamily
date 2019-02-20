@@ -58,7 +58,18 @@
     $scope.InventoryModelList.push($scope.InventoryModel);
     $scope.InventoryModelList.push($scope.InventoryModel2);
 
-
+    //Variables for inventory update form
+    $scope.ItemModel = {
+        barCode: "599134567890",
+        itemNumber: "1-154-15-123465",
+        itemName: "Unikum szilva 0.5L | 35%",
+        itemCount: 5
+    };
+    $scope.ItemModelList = [];
+    $scope.ItemModelList.push($scope.ItemModel);
+    $scope.ItemModelList.push($scope.ItemModel);
+    $scope.ItemModelList.push($scope.ItemModel);
+    $scope.ItemModelList.push($scope.ItemModel);
 
     //****************************************************/
     //*   Set Default properties for start               */
@@ -147,6 +158,16 @@
     //****************************************************/
     $scope.AddNewMenuItem = function (newItem) {
         $scope.NavItems.push(newItem);
+    };
+
+    $scope.asd = function () {
+        angular.element(document.querySelector('#itemResultContainer')).css("opacity", "0");
+        angular.element(document.querySelector('#itemResultContainer')).css("margin-top", "50px");
+    };
+
+    $scope.asd2 = function () {
+        angular.element(document.querySelector('#itemResultContainer')).css("opacity", "1");
+        angular.element(document.querySelector('#itemResultContainer')).css("margin-top", "25px");
     };
     
 });

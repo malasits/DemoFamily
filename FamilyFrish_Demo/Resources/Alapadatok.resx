@@ -147,6 +147,18 @@
   <data name="StartNavigationValue" xml:space="preserve">
     <value>Funkciók</value>
   </data>
+  <data name="TableHeaderBarCode" xml:space="preserve">
+    <value>Vonalkód</value>
+  </data>
+  <data name="TableHeaderItemCount" xml:space="preserve">
+    <value>Mennyiség</value>
+  </data>
+  <data name="TableHeaderItemName" xml:space="preserve">
+    <value>Cikk</value>
+  </data>
+  <data name="TableHeaderItemNumber" xml:space="preserve">
+    <value>Cikkszám</value>
+  </data>
   <data name="Warehouse" xml:space="preserve">
     <value>Raktár:</value>
   </data>

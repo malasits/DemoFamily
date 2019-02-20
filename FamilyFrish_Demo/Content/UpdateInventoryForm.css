@@ -1,4 +1,4 @@
-﻿.updateInventoryFunctionButtons {
+.updateInventoryFunctionButtons {
   margin-top: 0px;
   margin-bottom: 15px;
   padding-top: 20px;
@@ -8,7 +8,10 @@
 #UpdateInventoryInputsContainer {
   border: 1px solid black;
   border-radius: 5px;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 #UpdateInventoryContainer {
   border-top: 1px solid black;
@@ -17,9 +20,55 @@
   border-bottom: 1px solid black;
   padding-top: 15px;
   padding-bottom: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
 }
 #UpdateInventrorySpinner {
   padding-top: 25px;
+}
+#itemResultContainer {
+  overflow-x: auto;
+}
+#itemResultContainer {
+  margin-top: 25px;
+  padding-top: 15px;
+  -webkit-animation-name: fadeInResult;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: fadeInResult;
+  animation-duration: 1s;
+  /* Safari */
+  transition: opacity 1s, margin 1s;
+}
+#itemResultContainer table {
+  border: 1px solid black;
+}
+#itemResultContainer table tr td {
+  font-size: 70%;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+}
+#itemResultContainer table thead {
+  background-color: dimgray;
+  color: white;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  font-size: 75%;
+}
+#itemResultContainer table tr:nth-child(2n) {
+  background-color: lightgray;
+}
+/*itemResultContainer animations*/
+/* Safari 4.0 - 8.0 */
+/* Standard syntax */
+@keyframes fadeInResult {
+  from {
+    opacity: 0;
+    margin-top: 50px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 25px;
+  }
 }

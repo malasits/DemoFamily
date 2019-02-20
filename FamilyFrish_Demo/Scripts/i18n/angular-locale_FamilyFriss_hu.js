@@ -14,8 +14,12 @@ var translationhu = {
   "InventoryComment": "Megjegyzés:",
   "InventoryId": "Leltár azonosító:",
   "LoginHeaderMessage": "Bejelentkezés",
+  "TableHeaderItemName": "Cikk",
+  "TableHeaderBarCode": "Vonalkód",
   "StartNavigationValue": "Funkciók",
   "InventoryRecordEnd": "Leltár tervezett vége:",
+  "TableHeaderItemCount": "Mennyiség",
   "InventoryRecordOpen": "Rögzízés megnyitása",
+  "TableHeaderItemNumber": "Cikkszám",
   "InventoryState": "Státusz:"
 }

@@ -151,6 +151,42 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vonalkód.
+        /// </summary>
+        public static string TableHeaderBarCode {
+            get {
+                return ResourceManager.GetString("TableHeaderBarCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mennyiség.
+        /// </summary>
+        public static string TableHeaderItemCount {
+            get {
+                return ResourceManager.GetString("TableHeaderItemCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikk.
+        /// </summary>
+        public static string TableHeaderItemName {
+            get {
+                return ResourceManager.GetString("TableHeaderItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikkszám.
+        /// </summary>
+        public static string TableHeaderItemNumber {
+            get {
+                return ResourceManager.GetString("TableHeaderItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Raktár:.
         /// </summary>
         public static string Warehouse {
