@@ -6,5 +6,21 @@
   {
     "outputFile": "Content/UpdateInventoryForm.css",
     "inputFile": "Content/UpdateInventoryForm.less"
+  },
+  {
+    "outputFile": "Content/UpdateItemModal.css",
+    "inputFile": "Content/UpdateItemModal.less"
+  },
+  {
+    "outputFile": "Content/SearchItemModal.css",
+    "inputFile": "Content/SearchItemModal.less"
+  },
+  {
+    "outputFile": "Content/YesNoModal.css",
+    "inputFile": "Content/YesNoModal.less"
+  },
+  {
+    "outputFile": "Content/Site.css",
+    "inputFile": "Content/Site.less"
   }
 ]

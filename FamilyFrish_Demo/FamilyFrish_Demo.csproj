@@ -175,6 +175,12 @@
     <Content Include="Content\NavigationForm.min.css">
       <DependentUpon>NavigationForm.css</DependentUpon>
     </Content>
+    <Content Include="Content\SearchItemModal.css">
+      <DependentUpon>SearchItemModal.less</DependentUpon>
+    </Content>
+    <Content Include="Content\SearchItemModal.min.css">
+      <DependentUpon>SearchItemModal.css</DependentUpon>
+    </Content>
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -187,6 +193,18 @@
     </Content>
     <Content Include="Content\UpdateInventoryForm.min.css">
       <DependentUpon>UpdateInventoryForm.css</DependentUpon>
+    </Content>
+    <Content Include="Content\UpdateItemModal.css">
+      <DependentUpon>UpdateItemModal.less</DependentUpon>
+    </Content>
+    <Content Include="Content\UpdateItemModal.min.css">
+      <DependentUpon>UpdateItemModal.css</DependentUpon>
+    </Content>
+    <Content Include="Content\YesNoModal.css">
+      <DependentUpon>YesNoModal.less</DependentUpon>
+    </Content>
+    <Content Include="Content\YesNoModal.min.css">
+      <DependentUpon>YesNoModal.css</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -272,6 +290,9 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\UpdateInventoryForm.less" />
+    <Content Include="Content\UpdateItemModal.less" />
+    <Content Include="Content\SearchItemModal.less" />
+    <Content Include="Content\YesNoModal.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1057,6 +1078,9 @@
     <Content Include="Views\Partial\FunctionsForm.cshtml" />
     <Content Include="Views\Partial\InventoryRecordingForm.cshtml" />
     <Content Include="Views\Partial\UpdateInventoryForm.cshtml" />
+    <Content Include="Views\Partial\UpdateItemModal.cshtml" />
+    <Content Include="Views\Partial\SearchItemModal.cshtml" />
+    <Content Include="Views\Partial\YesNoModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

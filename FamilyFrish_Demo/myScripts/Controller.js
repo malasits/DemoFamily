@@ -71,6 +71,26 @@
     $scope.ItemModelList.push($scope.ItemModel);
     $scope.ItemModelList.push($scope.ItemModel);
 
+    //Variables for search/update item modal
+    $scope.ItemModalModel = {
+        barCode: "599134567890",
+        itemNumber: "1-154-15-123465",
+        itemName: "Unikum szilva 0.5L | 35%",
+        itemCount: 5,
+        comment: "Teszt megjegyzés \n akár több sorban is",
+        username: "Megfel Elek",
+        commitDate: "2018.02.15 13:05:42",
+        lastModifiedUsername: "Bekő Tóni",
+        lastModifiedDate: "2018.02.16 10:43:21"
+    };
+
+    //Variables for yes/no modal
+    $scope.YesNoModalModel = {
+        text: "Biztosan szeretné törölni a rögzített terméket?",
+        function: "DeleteItem",
+        barCode: "599134567890"
+    };
+
     //****************************************************/
     //*   Set Default properties for start               */
     //****************************************************/

@@ -6,19 +6,19 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" ng-hide="false">
         @Html.Partial("~/Views/Partial/NavigationForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="true">
+    <div class="row" ng-hide="false">
         @Html.Partial("~/Views/Partial/LoginForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="true">
+    <div class="row" ng-hide="false">
         @Html.Partial("~/Views/Partial/FunctionsForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="true">
+    <div class="row" ng-hide="false">
         @Html.Partial("~/Views/Partial/InventoryRecordingForm.cshtml")
     </div>
 
@@ -26,4 +26,10 @@
         @Html.Partial("~/Views/Partial/UpdateInventoryForm.cshtml")
     </div>
 
-</div>
+    <div class="row" ng-hide="true">
+        @Html.Partial("~/Views/Partial/UpdateItemModal.cshtml")
+        @Html.Partial("~/Views/Partial/SearchItemModal.cshtml")
+        @Html.Partial("~/Views/Partial/YesNoModal.cshtml")
+    </div>
+
+    </div>

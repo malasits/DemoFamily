@@ -1,0 +1,26 @@
+﻿
+@using FamilyFrish_Demo.Resources;
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yesNoModalContainer">
+    yesNoModal
+</button>
+
+
+<div class="modal fade" id="yesNoModalContainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+
+@*Disable other oepned modals*@
+<div class="disableSecondaryModals"></div>
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <label>{{YesNoModalModel.text}}</label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">@Alapadatok.YesNoModalNo</button>
+                <button type="button" class="btn btn-success">@Alapadatok.YesNoModalYes</button>
+            </div>
+        </div>
+    </div>
+</div>

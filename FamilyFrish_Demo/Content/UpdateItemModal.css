@@ -1,0 +1,9 @@
+﻿#updateItemModalContainer .modal-dialog {
+  padding: 25px;
+}
+#updateItemModalContainer .modal-dialog .modal-body label {
+  padding-top: 10px;
+}
+#updateItemModalContainer .modal-dialog .modal-body .row {
+  padding-top: 10px;
+}

@@ -142,6 +142,114 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vonalkód.
+        /// </summary>
+        public static string SearchItemModalBarCode {
+            get {
+                return ResourceManager.GetString("SearchItemModalBarCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mégsem.
+        /// </summary>
+        public static string SearchItemModalCancel {
+            get {
+                return ResourceManager.GetString("SearchItemModalCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megjegyzés.
+        /// </summary>
+        public static string SearchItemModalComment {
+            get {
+                return ResourceManager.GetString("SearchItemModalComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Törlés.
+        /// </summary>
+        public static string SearchItemModalDelete {
+            get {
+                return ResourceManager.GetString("SearchItemModalDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rögzít.
+        /// </summary>
+        public static string SearchItemModalDone {
+            get {
+                return ResourceManager.GetString("SearchItemModalDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Talált mennyiség.
+        /// </summary>
+        public static string SearchItemModalFindCount {
+            get {
+                return ResourceManager.GetString("SearchItemModalFindCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rögzítés dátuma.
+        /// </summary>
+        public static string SearchItemModalItemCommitDate {
+            get {
+                return ResourceManager.GetString("SearchItemModalItemCommitDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Utolsó módosítás dátuma.
+        /// </summary>
+        public static string SearchItemModalItemLastModifiedDate {
+            get {
+                return ResourceManager.GetString("SearchItemModalItemLastModifiedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Utolsó módosító felhasználó.
+        /// </summary>
+        public static string SearchItemModalItemLastModifiedUsername {
+            get {
+                return ResourceManager.GetString("SearchItemModalItemLastModifiedUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikknév.
+        /// </summary>
+        public static string SearchItemModalItemName {
+            get {
+                return ResourceManager.GetString("SearchItemModalItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikkszám.
+        /// </summary>
+        public static string SearchItemModalItemNumber {
+            get {
+                return ResourceManager.GetString("SearchItemModalItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rögzítő felhasználó.
+        /// </summary>
+        public static string SearchItemModalItemUserame {
+            get {
+                return ResourceManager.GetString("SearchItemModalItemUserame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Funkciók.
         /// </summary>
         public static string StartNavigationValue {
@@ -187,11 +295,92 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vonalkód.
+        /// </summary>
+        public static string UpdateItemModalBarCode {
+            get {
+                return ResourceManager.GetString("UpdateItemModalBarCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mégsem.
+        /// </summary>
+        public static string UpdateItemModalCancel {
+            get {
+                return ResourceManager.GetString("UpdateItemModalCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megjegyzés.
+        /// </summary>
+        public static string UpdateItemModalComment {
+            get {
+                return ResourceManager.GetString("UpdateItemModalComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rögzít.
+        /// </summary>
+        public static string UpdateItemModalDone {
+            get {
+                return ResourceManager.GetString("UpdateItemModalDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Talált mennyiség.
+        /// </summary>
+        public static string UpdateItemModalFindCount {
+            get {
+                return ResourceManager.GetString("UpdateItemModalFindCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikknév.
+        /// </summary>
+        public static string UpdateItemModalItemName {
+            get {
+                return ResourceManager.GetString("UpdateItemModalItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikkszám.
+        /// </summary>
+        public static string UpdateItemModalItemNumber {
+            get {
+                return ResourceManager.GetString("UpdateItemModalItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Raktár:.
         /// </summary>
         public static string Warehouse {
             get {
                 return ResourceManager.GetString("Warehouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nem.
+        /// </summary>
+        public static string YesNoModalNo {
+            get {
+                return ResourceManager.GetString("YesNoModalNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Igen.
+        /// </summary>
+        public static string YesNoModalYes {
+            get {
+                return ResourceManager.GetString("YesNoModalYes", resourceCulture);
             }
         }
     }

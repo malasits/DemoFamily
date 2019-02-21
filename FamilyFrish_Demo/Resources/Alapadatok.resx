@@ -144,6 +144,42 @@
   <data name="NumberOfFixeditems" xml:space="preserve">
     <value>Rögzített tételek száma:</value>
   </data>
+  <data name="SearchItemModalBarCode" xml:space="preserve">
+    <value>Vonalkód</value>
+  </data>
+  <data name="SearchItemModalCancel" xml:space="preserve">
+    <value>Mégsem</value>
+  </data>
+  <data name="SearchItemModalComment" xml:space="preserve">
+    <value>Megjegyzés</value>
+  </data>
+  <data name="SearchItemModalDelete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="SearchItemModalDone" xml:space="preserve">
+    <value>Rögzít</value>
+  </data>
+  <data name="SearchItemModalFindCount" xml:space="preserve">
+    <value>Talált mennyiség</value>
+  </data>
+  <data name="SearchItemModalItemCommitDate" xml:space="preserve">
+    <value>Rögzítés dátuma</value>
+  </data>
+  <data name="SearchItemModalItemLastModifiedDate" xml:space="preserve">
+    <value>Utolsó módosítás dátuma</value>
+  </data>
+  <data name="SearchItemModalItemLastModifiedUsername" xml:space="preserve">
+    <value>Utolsó módosító felhasználó</value>
+  </data>
+  <data name="SearchItemModalItemName" xml:space="preserve">
+    <value>Cikknév</value>
+  </data>
+  <data name="SearchItemModalItemNumber" xml:space="preserve">
+    <value>Cikkszám</value>
+  </data>
+  <data name="SearchItemModalItemUserame" xml:space="preserve">
+    <value>Rögzítő felhasználó</value>
+  </data>
   <data name="StartNavigationValue" xml:space="preserve">
     <value>Funkciók</value>
   </data>
@@ -159,7 +195,34 @@
   <data name="TableHeaderItemNumber" xml:space="preserve">
     <value>Cikkszám</value>
   </data>
+  <data name="UpdateItemModalBarCode" xml:space="preserve">
+    <value>Vonalkód</value>
+  </data>
+  <data name="UpdateItemModalCancel" xml:space="preserve">
+    <value>Mégsem</value>
+  </data>
+  <data name="UpdateItemModalComment" xml:space="preserve">
+    <value>Megjegyzés</value>
+  </data>
+  <data name="UpdateItemModalDone" xml:space="preserve">
+    <value>Rögzít</value>
+  </data>
+  <data name="UpdateItemModalFindCount" xml:space="preserve">
+    <value>Talált mennyiség</value>
+  </data>
+  <data name="UpdateItemModalItemName" xml:space="preserve">
+    <value>Cikknév</value>
+  </data>
+  <data name="UpdateItemModalItemNumber" xml:space="preserve">
+    <value>Cikkszám</value>
+  </data>
   <data name="Warehouse" xml:space="preserve">
     <value>Raktár:</value>
+  </data>
+  <data name="YesNoModalNo" xml:space="preserve">
+    <value>Nem</value>
+  </data>
+  <data name="YesNoModalYes" xml:space="preserve">
+    <value>Igen</value>
   </data>
 </root>

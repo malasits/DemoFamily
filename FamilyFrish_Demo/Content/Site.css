@@ -1,8 +1,7 @@
-/*@headerBackgroundColor: #0d0d0d;*/
+﻿/*@headerBackgroundColor: #0d0d0d;*/
 body {
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -30,5 +29,12 @@ header img {
   border: 0.7em solid black;
   border-right-color: transparent;
   border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
   animation: spinner-border 0.75s linear infinite;
+}
+
+.container, header {
+    max-width: 720px !important;
+    margin-left: auto;
+    margin-right: auto;
 }
