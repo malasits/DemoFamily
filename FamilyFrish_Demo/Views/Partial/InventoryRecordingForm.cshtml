@@ -1,59 +1,59 @@
 ﻿@using FamilyFrish_Demo.Resources;
 
 <div class="col-12" id="inventoryRecordingContainer">
-    <div class="row inventoryItem" ng-repeat="item in InventoryModelList" ng-click="AddNewMenuItem()">
+    <div class="row inventoryItem" ng-repeat="item in InventoryModelList">
         
         <div class="col-12 inventoryHeader">
-            <span>@Alapadatok.InventoryState</span>
-            <span class="inventoryLabel">{{item.inventoryState}}</span>
+            <span id="inventorylblState_{{$index}}">@Alapadatok.InventoryState</span>
+            <span id="inventoryState_{{$index}}" class="inventoryLabel">{{item.inventoryState}}</span>
         </div>
 
         <div class="col-6">
-            <button class="btn btn-danger">@Alapadatok.InventoryRecordClose</button>
+            <button id="inventoryBtnClose_{{$index}}" class="btn btn-danger">@Alapadatok.InventoryRecordClose</button>
         </div>
         <div class="col-6">
-            <button class="btn btn-success">@Alapadatok.InventoryRecordOpen</button>
+            <button id="inventoryBtnOpen_{{$index}}" class="btn btn-success" ng-click="OpenInventory(item.inventoryId, item.warehouse)">@Alapadatok.InventoryRecordOpen</button>
         </div>
 
         <div class="col-12 inventoryBorder"></div>
 
         <div class="col-6">
-            <span>{{inventoryIdLabel}} </span>
+            <span id="inventoryLblId_{{$index}}">{{inventoryIdLabel}}</span>
             <br />
-            <span class="inventoryLabel"> {{item.inventoryId}}</span>
+            <span id="inventoryId_{{$index}}" class="inventoryLabel"> {{item.inventoryId}}</span>
         </div>
         <div class="col-6">
-            <span>{{warehouseLabel}} </span>
+            <span id="inventoryLblWarehouse_{{$index}}">{{warehouseLabel}}</span>
             <br />
-            <span class="inventoryLabel">{{item.warehouse}}</span>
+            <span id="inventoryWarehouse_{{$index}}" class="inventoryLabel">{{item.warehouse}}</span>
         </div>
 
         <div class="col-12 inventoryBorder"></div>
 
         <div class="col-6">
-            <span>{{inventoryRecordBeginLabel}} </span>
+            <span id="inventoryLblRecordBegin_{{$index}}">{{inventoryRecordBeginLabel}} </span>
             <br />
-            <span class="inventoryLabel">{{item.inventoryRecordBegin}}</span>
+            <span id="inventoryRecordBegin_{{$index}}" class="inventoryLabel">{{item.inventoryRecordBegin}}</span>
         </div>
         <div class="col-6">
-            <span>{{inventoryRecordEndLabel}} </span>
+            <span id="inventoryLblRecordEnd_{{$index}}">{{inventoryRecordEndLabel}} </span>
             <br />
-            <span class="inventoryLabel">{{item.inventoryRecordEnd}} </span>
-        </div>
-
-        <div class="col-12 inventoryBorder"></div>
-
-        <div class="col-12">
-            <span>{{numberOfFixeditemsIdLabel}} </span>
-            <span class="inventoryLabel">{{item.numberOfFixedItems}} </span>
+            <span id="inventoryRecordEnd_{{$index}}" class="inventoryLabel">{{item.inventoryRecordEnd}} </span>
         </div>
 
         <div class="col-12 inventoryBorder"></div>
 
         <div class="col-12">
-            <span>{{inventoryCommentLabel}} </span>
+            <span id="inventoryLblNumberOfFixeditemsId_{{$index}}">{{numberOfFixeditemsIdLabel}} </span>
+            <span id="inventoryNumberOfFixeditemsId_{{$index}}" class="inventoryLabel">{{item.numberOfFixedItems}} </span>
+        </div>
+
+        <div class="col-12 inventoryBorder"></div>
+
+        <div class="col-12">
+            <span id="inventoryLblComment_{{$index}}">{{inventoryCommentLabel}} </span>
             <br />
-            <textarea class="form-control" rows="5" id="comment" ng-model="item.comment"></textarea>
+            <textarea id="inventoryComment_{{$index}}" class="form-control" rows="5" ng-model="item.comment" disabled></textarea>
         </div>
     </div>
 </div>

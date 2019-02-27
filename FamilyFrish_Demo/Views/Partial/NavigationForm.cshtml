@@ -1,8 +1,8 @@
 ﻿<div class="col-12" id="BreadCrumbNavbar">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item" ng-repeat="items in NavItems" id="nav-{{items}}" ng-click="ClickOnMenuItem(items)">
-                {{items}}
+            <li class="breadcrumb-item" ng-repeat="items in NavItems  track by $index" id="navigationItem_{{$index}}" ng-click="ClickOnMenuItem(items)">
+                {{items.title}}
             </li>
         </ol>
     </nav>

@@ -1,6 +1,15 @@
-﻿<div class="col-12" id="functionsContainer">
-    <div class="row functionsItem" ng-repeat="func in Functions" ng-click="AddNewMenuItem(func)">
-        <div class="col-11">{{func}}</div>
-        <div class="triangle-right"></div>
+﻿@using FamilyFrish_Demo.Resources;
+
+<div class="col-12" id="functionsContainer">
+    <div ng-if="!InvalidInventoryPermission" class="row functionsItem" ng-repeat="func in Functions" ng-click="AddNewMenuItem(func,$index)">
+        <div id="functionBtn_{{$index}}" class="col-11">{{func}}</div>
+        <div id="functionBtnTriangle_{{$index}}" class="triangle-right"></div>
     </div>
+
+    <div ng-if="InvalidInventoryPermission" class="row">
+        <div class="col-12 text-center">
+            <div id="functionsFormAlert" uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')">{{alert.msg}}</div>
+        </div>
+    </div>
+
 </div>

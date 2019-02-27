@@ -3,12 +3,22 @@
     //****************************************************/
     //*   Init variables                                 */
     //****************************************************/
+    //Variabler for all forms
+    $scope.UserLoggedIn = false;
+    $scope.InvalidUser = false;
+    $scope.InvalidPremission = false; //MobilKER elérés jogosutság
+    $scope.InvalidInventoryPermission = false; //Leltármegtekintői jogosultság
+
+    $scope.ShowFunctionsForm = false;
+    $scope.ShowRecordingForm = false;
+    $scope.ShowUpdateInventoryForm = false;
+
     //Variables for login form
     $scope.LoginFormValid = true;
     $scope.ShowLoginSpinner = false;
     $scope.DisableLoginButton = false;
-    $scope.InvalidUser = false;
-    $scope.InvalidPremission = false;
+    $scope.Username = "";
+    $scope.Password = "";
 
     //Variables for alert messages
     $rootScope.alertsTimeout = "10000";
@@ -19,7 +29,7 @@
     $scope.NavItems = [];
 
     //Variables for functions form
-    $scope.Functions = ["Leltár rögzítés", "Komissió ellenőrzés"];
+    $scope.Functions = ["Leltár rögzítés"];
 
     //Variables for inventory recording form
     $scope.inventoryIdLabel = $filter('translate')('InventoryId');
@@ -96,7 +106,11 @@
     //****************************************************/
     $scope.Init = function(){
         $scope.HeaderMessage = $filter('translate')('LoginHeaderMessage');
-        $scope.NavItems.push($filter('translate')('StartNavigationValue'));
+        $scope.RootMenu = {
+            title: $filter('translate')('StartNavigationValue'),
+            function: "root"
+        };
+        $scope.NavItems.push($scope.RootMenu);
     };
     $scope.Init();
 
@@ -134,19 +148,32 @@
             $scope.LoginFormValid = true;
             $scope.DisableLoginButton = true;
 
-            //TODO: Call login service
-            $scope.InvalidUser = true;
-            $scope.InvalidPremission = true;
+            //TODO: Lecserélni login service hívásra
+            if ($scope.Username === "asd" && $scope.Password === "asd") {
 
-            //Sikeres bejelentkezés
-            $rootScope.alert("success", $filter('translate')('SuccessLogin'));
-
-            //Hibaszövegek
-            if ($scope.InvalidUser) {
-                $rootScope.alert("danger", $filter('translate')('ErrorInvalUduser'));
+                $scope.InvalidUser = false;
+                $scope.UserLoggedIn = true;
+                $scope.InvalidPremission = false;
+                $scope.InvalidInventoryPermission = false;
+                $scope.ShowFunctionsForm = true;
+                $rootScope.alert("danger", $filter('translate')('ErrorInvalidInventoryPermission'));
             }
-            else if ($scope.InvalidPremission) {
-                $rootScope.alert("danger", $filter('translate')('ErrorInvalidPremission'));
+            else {
+                $scope.UserLoggedIn = false;
+                $scope.InvalidUser = true;
+                $scope.InvalidPremission = true;
+                $scope.ShowLoginSpinner = false;
+                $scope.LoginFormValid = false;
+                $scope.DisableLoginButton = false;
+
+                //Hibaszövegek
+                $rootScope.alerts = [];
+                if ($scope.InvalidUser) {
+                    $rootScope.alert("danger", $filter('translate')('ErrorInvalUduser'));
+                }
+                else if ($scope.InvalidPremission) {
+                    $rootScope.alert("danger", $filter('translate')('ErrorInvalidPremission'));
+                }
             }
         }
         else {
@@ -162,23 +189,68 @@
     //*   Controll navigation items                      */
     //****************************************************/
     $scope.ClickOnMenuItem = function (item) {
+
+        //Breadcrumb menü léptető számláló
         var index = 0;
         for (var i = 0; i < $scope.NavItems.length; i++) {
             if ($scope.NavItems[i] === item) {
-                //angular.element(document.querySelector('#nav-' + item)).addClass("active");
                 index = i;
                 $scope.NavItems.splice(index+1, $scope.NavItems.length - index);
                 break;
             }
         }
+
+        //Breadcrumb menü léptető controller
+        switch (item.function) {
+            case "root": {
+                $scope.ShowFunctionsForm = true;
+                $scope.ShowRecordingForm = false;
+                $scope.ShowUpdateInventoryForm = false;
+                break;
+            }
+            case "0": {
+                $scope.ShowFunctionsForm = false;
+                $scope.ShowRecordingForm = true;
+                $scope.ShowUpdateInventoryForm = false;
+                break;
+            }
+        }
+
     };
 
     //****************************************************/
     //*   Add new navigation items                       */
     //****************************************************/
-    $scope.AddNewMenuItem = function (newItem) {
-        $scope.NavItems.push(newItem);
+    $scope.AddNewMenuItem = function (newItem, menuFunc) {
+
+        var newNavItem = {
+            title: newItem,
+            function: "" + menuFunc+ ""
+        };
+        
+        $scope.NavItems.push(newNavItem);
+
+        if (menuFunc === 0) {
+            $scope.ShowFunctionsForm = false;
+            $scope.ShowRecordingForm = true;
+            $scope.ShowUpdateInventoryForm = false;
+        }
     };
+
+    $scope.OpenInventory = function (inventoryId, warehouse) {
+        var newNavItem = {
+            title: inventoryId + "(" + warehouse + ")",
+            function: ""
+        };
+
+        $scope.NavItems.push(newNavItem);
+
+        $scope.ShowFunctionsForm = false;
+        $scope.ShowRecordingForm = false;
+        $scope.ShowUpdateInventoryForm = true;
+    };
+
+
 
     $scope.asd = function () {
         angular.element(document.querySelector('#itemResultContainer')).css("opacity", "0");

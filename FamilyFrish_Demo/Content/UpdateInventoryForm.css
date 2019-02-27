@@ -1,4 +1,4 @@
-.updateInventoryFunctionButtons {
+﻿.updateInventoryFunctionButtons {
   margin-top: 0px;
   margin-bottom: 15px;
   padding-top: 20px;
@@ -36,6 +36,7 @@
   /* Safari 4.0 - 8.0 */
   animation-name: fadeInResult;
   animation-duration: 1s;
+  -webkit-transition: opacity 1s, margin 1s;
   /* Safari */
   transition: opacity 1s, margin 1s;
 }
@@ -61,6 +62,14 @@
 }
 /*itemResultContainer animations*/
 /* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadeInResult {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Standard syntax */
 @keyframes fadeInResult {
   from {

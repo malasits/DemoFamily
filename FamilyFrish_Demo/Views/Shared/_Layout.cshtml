@@ -7,22 +7,21 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/LoginForm.css")
     @Styles.Render("~/Content/Site.css")
-    <link href="~/Content/NavigationForm.css" rel="stylesheet" />
-    <link href="~/Content/FunctionsForm.css" rel="stylesheet" />
-    <link href="~/Content/InventoryRecordingForm.css" rel="stylesheet" />
-    <link href="~/Content/UpdateInventoryForm.css" rel="stylesheet" />
-    <link href="~/Content/UpdateItemModal.css" rel="stylesheet" />
-    <link href="~/Content/SearchItemModal.css" rel="stylesheet" />
-    <link href="~/Content/YesNoModal.css" rel="stylesheet" />
-
+    @Styles.Render("~/Content/NavigationForm.css")
+    @Styles.Render("~/Content/FunctionsForm.css")
+    @Styles.Render("~/Content/InventoryRecordingForm.css")
+    @Styles.Render("~/Content/UpdateInventoryForm.css")
+    @Styles.Render("~/Content/UpdateItemModal.css")
+    @Styles.Render("~/Content/SearchItemModal.css")
+    @Styles.Render("~/Content/YesNoModal.css")
 
     @Scripts.Render("~/Scripts/angular.min.js")
-    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
-    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/angular-animate.min.js"></script>
+    @Scripts.Render("~/Scripts/angular-ui/ui-bootstrap.min.js")
+    @Scripts.Render("~/Scripts/angular-ui/ui-bootstrap-tpls.min.js")
+    @Scripts.Render("~/Scripts/angular-animate.min.js")
     @Scripts.Render("~/Scripts/angular-messages.min.js")
-    <script src="~/Scripts/angular-translate.min.js"></script>
-    <script src="~/Scripts/i18n/angular-locale_FamilyFriss_hu.js"></script>
+    @Scripts.Render("~/Scripts/angular-translate.min.js")
+    @Scripts.Render("~/Scripts/i18n/angular-locale_FamilyFriss_hu.js")
 
     @Scripts.Render("~/myScripts/Module.js")
     @Scripts.Render("~/myScripts/Service.js")
@@ -30,7 +29,7 @@
 </head>
 <body ng-app="demoApp" ng-controller="demoController">
 
-    <div id="Wrapper" style="display:none;">
+    <div id="wrapper" style="display:none;">
         <header>
             <nav class="navbar">
                 <div class="navbar-brand">
@@ -51,7 +50,7 @@
 
     <script type="text/javascript">
         window.onload = function () {
-            document.getElementById("Wrapper").style.display = "block";
+            document.getElementById("wrapper").style.display = "block";
         }
     </script>
 

@@ -61,6 +61,51 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nincs jogosultsága a leltárlekéréshez!.
+        /// </summary>
+        public static string ErrorInvalidInventoryPermission {
+            get {
+                return ResourceManager.GetString("ErrorInvalidInventoryPermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nincs jogosultsága belépni a rendszerbe!.
+        /// </summary>
+        public static string ErrorInvalidPremission {
+            get {
+                return ResourceManager.GetString("ErrorInvalidPremission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Érvénytelen felhasználó vagy jelszó!.
+        /// </summary>
+        public static string ErrorInvalUduser {
+            get {
+                return ResourceManager.GetString("ErrorInvalUduser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jelszó megadása kötelező!.
+        /// </summary>
+        public static string ErrorPassword {
+            get {
+                return ResourceManager.GetString("ErrorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Felhasználónév megadása kötelező!.
+        /// </summary>
+        public static string ErrorUserName {
+            get {
+                return ResourceManager.GetString("ErrorUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Megjegyzés:.
         /// </summary>
         public static string InventoryComment {
@@ -124,6 +169,15 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Belépés.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bejelentkezés.
         /// </summary>
         public static string LoginHeaderMessage {
@@ -138,6 +192,15 @@ namespace FamilyFrish_Demo.Resources {
         public static string NumberOfFixeditems {
             get {
                 return ResourceManager.GetString("NumberOfFixeditems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jelszó:.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         
@@ -259,6 +322,15 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sikeres bejelentkezés!.
+        /// </summary>
+        public static string SuccessLogin {
+            get {
+                return ResourceManager.GetString("SuccessLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vonalkód.
         /// </summary>
         public static string TableHeaderBarCode {
@@ -291,6 +363,51 @@ namespace FamilyFrish_Demo.Resources {
         public static string TableHeaderItemNumber {
             get {
                 return ResourceManager.GetString("TableHeaderItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vonalkód.
+        /// </summary>
+        public static string UpdateInventoryBarCode {
+            get {
+                return ResourceManager.GetString("UpdateInventoryBarCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikknév.
+        /// </summary>
+        public static string UpdateInventoryItemName {
+            get {
+                return ResourceManager.GetString("UpdateInventoryItemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cikkszám.
+        /// </summary>
+        public static string UpdateInventoryItemNumber {
+            get {
+                return ResourceManager.GetString("UpdateInventoryItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keresés.
+        /// </summary>
+        public static string UpdateInventorySearch {
+            get {
+                return ResourceManager.GetString("UpdateInventorySearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Felvitel.
+        /// </summary>
+        public static string UpdateInventoryUpload {
+            get {
+                return ResourceManager.GetString("UpdateInventoryUpload", resourceCulture);
             }
         }
         
@@ -358,11 +475,29 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Felhasználónév:.
+        /// </summary>
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Raktár:.
         /// </summary>
         public static string Warehouse {
             get {
                 return ResourceManager.GetString("Warehouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nincs nyitott leltár!.
+        /// </summary>
+        public static string WarnNoOpenInventory {
+            get {
+                return ResourceManager.GetString("WarnNoOpenInventory", resourceCulture);
             }
         }
         

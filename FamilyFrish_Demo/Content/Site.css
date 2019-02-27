@@ -2,6 +2,7 @@
 body {
   padding-left: 20px;
   padding-right: 20px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -32,9 +33,8 @@ header img {
   -webkit-animation: spinner-border 0.75s linear infinite;
   animation: spinner-border 0.75s linear infinite;
 }
-
-.container, header {
-    max-width: 720px !important;
-    margin-left: auto;
-    margin-right: auto;
+@media (min-width: 576px) {
+  .container {
+    max-width: 1200px;
+  }
 }

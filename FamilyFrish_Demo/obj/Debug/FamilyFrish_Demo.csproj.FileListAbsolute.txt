@@ -153,7 +153,6 @@ D:\Projects\DemoFamily\FamilyFrish_Demo\bin\Antlr3.Runtime.pdb
 D:\Projects\DemoFamily\FamilyFrish_Demo\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Projects\DemoFamily\FamilyFrish_Demo\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 D:\Projects\DemoFamily\FamilyFrish_Demo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.Resources.LoginForm.resources
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.GenerateResource.cache
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.csproj.CoreCompileInputs.cache
 D:\Projects\DemoFamily\FamilyFrish_Demo\obj\Debug\FamilyFrish_Demo.dll

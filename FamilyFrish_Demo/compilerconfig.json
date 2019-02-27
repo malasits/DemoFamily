@@ -22,5 +22,13 @@
   {
     "outputFile": "Content/Site.css",
     "inputFile": "Content/Site.less"
+  },
+  {
+    "outputFile": "Content/FunctionsForm.css",
+    "inputFile": "Content/FunctionsForm.less"
+  },
+  {
+    "outputFile": "Content/NavigationForm.css",
+    "inputFile": "Content/NavigationForm.less"
   }
 ]

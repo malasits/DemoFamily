@@ -1,31 +1,31 @@
 ﻿@using FamilyFrish_Demo.Resources;
 
-<div class="col-12" id="UpdateInventoryContainer">
-    <div class="row" id="UpdateInventoryInputsContainer">
+<div class="col-12" id="updateInventoryContainer">
+    <div class="row" id="updateInventoryInputsContainer">
         <div class="col-9">
             @*Inputs*@
             <div class="row">
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control" placeholder="Vonalkód">
+                        <input id="updateInventoryBarCode" type="number" class="form-control" placeholder="@Alapadatok.UpdateInventoryBarCode">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" id="button-addon2">Src</button>
+                            <button id="updateInventoryBtnSearchByBarCode"  class="btn btn-secondary" type="button">Src</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cikkszám">
+                        <input id="updateInventoryItemNumber" type="text" class="form-control" placeholder="@Alapadatok.UpdateInventoryItemNumber">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" id="button-addon2">Src</button>
+                            <button id="updateInventoryBtnSearchByItemNumber" class="btn btn-secondary" type="button">Src</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Cikknév">
+                        <input id="updateInventoryItemName" type="text" class="form-control" placeholder="@Alapadatok.UpdateInventoryItemName">
                         <div class="input-group-append">
-                            <button class="btn btn-secondary" type="button" id="button-addon2">Src</button>
+                            <button id="updateInventoryBtnSearchByItemName" class="btn btn-secondary" type="button">Src</button>
                         </div>
                     </div>
                 </div>
@@ -34,18 +34,17 @@
         <div class="col-3">
             @*Update button*@
             <div class="row">
-                <button class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button" ng-click="asd2()">Felvitel</button>
+                <button id="updateInventoryBtnUpload" class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button">@Alapadatok.UpdateInventoryUpload</button>
             </div>
             @*Search button*@
             <div class=" row">
-                <button class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button" ng-click="asd()">Keresés</button>
+                <button id="updateInventoryBtnSearch" class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button">@Alapadatok.UpdateInventorySearch</button>
             </div>
         </div>
     </div>
 
-    <div id="UpdateInventrorySpinner" ng-hide="true" class="d-flex justify-content-center">
+    <div id="updateInventrorySpinner" ng-hide="true" class="d-flex justify-content-center">
         <div class="spinner-border customSpinner" role="status">
-            <span class="sr-only">Loading...</span>
         </div>
     </div>
 
@@ -54,18 +53,18 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>@Alapadatok.TableHeaderBarCode</th>
-                        <th>@Alapadatok.TableHeaderItemNumber</th>
-                        <th>@Alapadatok.TableHeaderItemName</th>
-                        <th>@Alapadatok.TableHeaderItemCount</th>
+                        <th id="updateInventoryTblHeaderBarCode">@Alapadatok.TableHeaderBarCode</th>
+                        <th id="updateInventoryTblHeaderItemNumber">@Alapadatok.TableHeaderItemNumber</th>
+                        <th id="updateInventoryTblHeaderItemName">@Alapadatok.TableHeaderItemName</th>
+                        <th id="updateInventoryTblHeaderItemCount">@Alapadatok.TableHeaderItemCount</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in ItemModelList track by $index">
-                        <td>{{item.barCode}}</td>
-                        <td>{{item.itemNumber}}</td>
-                        <td>{{item.itemName}}</td>
-                        <td style="text-align:right;">{{item.itemCount}}</td>
+                        <td id="updateInventoryTblDataBarCode_{{$index}}">{{item.barCode}}</td>
+                        <td id="updateInventoryTblDataItemNumber_{{$index}}">{{item.itemNumber}}</td>
+                        <td id="updateInventoryTblDataItemName_{{$index}}">{{item.itemName}}</td>
+                        <td id="updateInventoryTblDataItemCount_{{$index}}" style="text-align:right;">{{item.itemCount}}</td>
                     </tr>
                 </tbody>
             </table>

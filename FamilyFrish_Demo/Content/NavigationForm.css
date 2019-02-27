@@ -1,4 +1,4 @@
-#BreadCrumbNavbar {
+﻿#BreadCrumbNavbar {
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -6,10 +6,14 @@
   background-color: gray !important;
   color: white !important;
   border-radius: 0px;
+  cursor: pointer !important;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   color: white !important;
 }
 breadcrumb-item {
   cursor: pointer;
+}
+.breadcrumb ol li:hover {
+  cursor: pointer !important;
 }

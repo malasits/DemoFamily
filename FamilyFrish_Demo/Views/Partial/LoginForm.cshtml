@@ -6,7 +6,7 @@
         @*Username*@
         <div class="row">
             <div class="col-4 text-right">
-                <label id="lblUsername" name="lblUsername" for="inputTextUsername">@LoginForm.Username</label>
+                <label id="lblUsername" name="lblUsername" for="inputTextUsername">@Alapadatok.Username</label>
             </div>
             <div class="col-8">
                 <input id="inputUsername" name="inputUsername" type="text" class="form-control text-center" ng-model="Username" ng-required="true" />
@@ -15,8 +15,8 @@
         <div class="row">
             <div class="col-4"></div>
             <div class="col-8">
-                <div ng-messages="LoginForm.inputUsername.$error" ng-if="LoginForm.inputUsername.$touched || (LoginForm.inputUsername.$invalid && !LoginFormValid)" class="text-danger" role="alert">
-                    <div ng-message="required">@LoginForm.ErrorUserName</div>
+                <div id="usernameErrorMessage" ng-messages="LoginForm.inputUsername.$error" ng-if="LoginForm.inputUsername.$touched || (LoginForm.inputUsername.$invalid && !LoginFormValid)" class="text-danger" role="alert">
+                    <div ng-message="required">@Alapadatok.ErrorUserName</div>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
         @*Password*@
         <div class="row">
             <div class="col-4 text-right">
-                <label id="lblPassword" name="lblPassword" for="inputTextPassword">@LoginForm.Password</label>
+                <label id="lblPassword" name="lblPassword" for="inputTextPassword">@Alapadatok.Password</label>
             </div>
             <div class="col-8">
                 <input id="inputPassword" name="inputPassword" type="password" class="form-control text-center" ng-model="Password" ng-required="true" />
@@ -33,8 +33,8 @@
         <div class="row">
             <div class="col-4"></div>
             <div class="col-8">
-                <div ng-messages="LoginForm.inputPassword.$error" ng-if="LoginForm.inputPassword.$touched || (LoginForm.inputPassword.$invalid && !LoginFormValid)" class="text-danger" role="alert">
-                    <div ng-message="required">@LoginForm.ErrorPassword</div>
+                <div id="passwordErrorMessage" ng-messages="LoginForm.inputPassword.$error" ng-if="LoginForm.inputPassword.$touched || (LoginForm.inputPassword.$invalid && !LoginFormValid)" class="text-danger" role="alert">
+                    <div ng-message="required">@Alapadatok.ErrorPassword</div>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 @*<div uib-alert dismiss-on-timeout="{{alertsTimeout}}" ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>*@
-                <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')">{{alert.msg}}</div>
+                <div id="loginFormAlert" uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')">{{alert.msg}}</div>
             </div>
         </div>
 
@@ -54,7 +54,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <button id="btnLogin" type="submit" class="btn btn-secondary btn-block" ng-disabled="DisableLoginButton">
-                    @LoginForm.Login
+                    @Alapadatok.Login
                     <span id="btnLoginSpinner" ng-show="ShowLoginSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 </button>
             </div>

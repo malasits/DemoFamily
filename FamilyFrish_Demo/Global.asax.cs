@@ -34,18 +34,12 @@ namespace FamilyFrish_Demo
             var resourceObject = new JObject();
 
             // ResourceSet-ek létrehozása a resX fájlokból.
-            var resourceSetLoginForm = Resources.LoginForm.ResourceManager.GetResourceSet(new System.Globalization.CultureInfo(lang), true, true);
             var resourceSetAlapadatok = Resources.Alapadatok.ResourceManager.GetResourceSet(new System.Globalization.CultureInfo(lang), true, true);
 
             // Dictionary készítés
-            IDictionaryEnumerator enumeratorLoginForm = resourceSetLoginForm.GetEnumerator();
             IDictionaryEnumerator enumeratorAlapadatok = resourceSetAlapadatok.GetEnumerator();
 
             // Kulcs-érték párok hozzáadása a resourceObjecthez
-            while (enumeratorLoginForm.MoveNext())
-            {
-                resourceObject.Add(enumeratorLoginForm.Key.ToString(), enumeratorLoginForm.Value.ToString());
-            }
             while (enumeratorAlapadatok.MoveNext())
             {
                 resourceObject.Add(enumeratorAlapadatok.Key.ToString(), enumeratorAlapadatok.Value.ToString());

@@ -2,27 +2,26 @@
 
     <div ng-hide="true" class="d-flex justify-content-center">
         <div class="spinner-border customSpinner" role="status">
-            <span class="sr-only">Loading...</span>
         </div>
     </div>
 
-    <div class="row" ng-hide="false">
+    <div class="row" ng-show="UserLoggedIn">
         @Html.Partial("~/Views/Partial/NavigationForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="false">
+    <div class="row" ng-show="!UserLoggedIn">
         @Html.Partial("~/Views/Partial/LoginForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="false">
+    <div class="row" ng-show="ShowFunctionsForm && UserLoggedIn">
         @Html.Partial("~/Views/Partial/FunctionsForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="false">
+    <div class="row" ng-show="ShowRecordingForm && UserLoggedIn">
         @Html.Partial("~/Views/Partial/InventoryRecordingForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="false">
+    <div class="row" ng-show="ShowUpdateInventoryForm && UserLoggedIn">
         @Html.Partial("~/Views/Partial/UpdateInventoryForm.cshtml")
     </div>
 

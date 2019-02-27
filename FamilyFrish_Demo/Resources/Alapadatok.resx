@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ErrorInvalidPremission" xml:space="preserve">
+    <value>Nincs jogosultsága belépni a rendszerbe!</value>
+  </data>
+  <data name="ErrorInvalUduser" xml:space="preserve">
+    <value>Érvénytelen felhasználó vagy jelszó!</value>
+  </data>
+  <data name="ErrorPassword" xml:space="preserve">
+    <value>Jelszó megadása kötelező!</value>
+  </data>
+  <data name="ErrorUserName" xml:space="preserve">
+    <value>Felhasználónév megadása kötelező!</value>
+  </data>
   <data name="InventoryComment" xml:space="preserve">
     <value>Megjegyzés:</value>
   </data>
@@ -138,11 +150,17 @@
   <data name="InventoryState" xml:space="preserve">
     <value>Státusz:</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Belépés</value>
+  </data>
   <data name="LoginHeaderMessage" xml:space="preserve">
     <value>Bejelentkezés</value>
   </data>
   <data name="NumberOfFixeditems" xml:space="preserve">
     <value>Rögzített tételek száma:</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Jelszó:</value>
   </data>
   <data name="SearchItemModalBarCode" xml:space="preserve">
     <value>Vonalkód</value>
@@ -183,6 +201,9 @@
   <data name="StartNavigationValue" xml:space="preserve">
     <value>Funkciók</value>
   </data>
+  <data name="SuccessLogin" xml:space="preserve">
+    <value>Sikeres bejelentkezés!</value>
+  </data>
   <data name="TableHeaderBarCode" xml:space="preserve">
     <value>Vonalkód</value>
   </data>
@@ -216,6 +237,9 @@
   <data name="UpdateItemModalItemNumber" xml:space="preserve">
     <value>Cikkszám</value>
   </data>
+  <data name="Username" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
   <data name="Warehouse" xml:space="preserve">
     <value>Raktár:</value>
   </data>
@@ -224,5 +248,26 @@
   </data>
   <data name="YesNoModalYes" xml:space="preserve">
     <value>Igen</value>
+  </data>
+  <data name="UpdateInventoryBarCode" xml:space="preserve">
+    <value>Vonalkód</value>
+  </data>
+  <data name="UpdateInventoryItemName" xml:space="preserve">
+    <value>Cikknév</value>
+  </data>
+  <data name="UpdateInventoryItemNumber" xml:space="preserve">
+    <value>Cikkszám</value>
+  </data>
+  <data name="UpdateInventorySearch" xml:space="preserve">
+    <value>Keresés</value>
+  </data>
+  <data name="UpdateInventoryUpload" xml:space="preserve">
+    <value>Felvitel</value>
+  </data>
+  <data name="ErrorInvalidInventoryPermission" xml:space="preserve">
+    <value>Nincs jogosultsága a leltárlekéréshez!</value>
+  </data>
+  <data name="WarnNoOpenInventory" xml:space="preserve">
+    <value>Nincs nyitott leltár!</value>
   </data>
 </root>

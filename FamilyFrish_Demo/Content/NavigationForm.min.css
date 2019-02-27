@@ -1,1 +1,1 @@
-﻿#BreadCrumbNavbar{padding-left:0;padding-right:0}.breadcrumb{background-color:gray !important;color:#fff !important;border-radius:0}.breadcrumb-item+.breadcrumb-item::before{color:#fff !important}breadcrumb-item{cursor:pointer}
+﻿#BreadCrumbNavbar{padding-left:0;padding-right:0;}.breadcrumb{background-color:#808080 !important;color:#fff !important;border-radius:0;cursor:pointer !important;}.breadcrumb-item+.breadcrumb-item::before{color:#fff !important;}breadcrumb-item{cursor:pointer;}.breadcrumb ol li:hover{cursor:pointer !important;}

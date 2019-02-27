@@ -1,13 +1,17 @@
-﻿#functionsContainer {
-    border: 1px solid black;
-    padding: 15px;
+﻿@functionsContainerBorderColor: #bfbfbf;
+@functionsItemBorderColor: #bfbfbf;
+@functionsItemHoverColor: lightgray;
+
+#functionsContainer {
+    border: 0px solid @functionsContainerBorderColor;
+    padding: 0px;
 }
 
 .functionsItem {
     font-weight: bold;
     /*font-style: italic;*/
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid @functionsItemBorderColor;
+    border-radius: 0px;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -17,7 +21,7 @@
 }
 
 .functionsItem:hover {
-    background-color: lightgray;
+    background-color: @functionsItemHoverColor;
 }
 
 .triangle-right {
