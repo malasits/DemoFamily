@@ -7,25 +7,25 @@
             <div class="row">
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input id="updateInventoryBarCode" type="number" class="form-control" placeholder="@Alapadatok.UpdateInventoryBarCode">
+                        <input id="updateInventoryBarCode" type="number" ng-model="FindBarCode" class="form-control" placeholder="@Alapadatok.UpdateInventoryBarCode" autofocus>
                         <div class="input-group-append">
-                            <button id="updateInventoryBtnSearchByBarCode"  class="btn btn-secondary" type="button">Src</button>
+                            <button id="updateInventoryBtnSearchByBarCode" ng-click="SearchByBarcode(FindBarCode)"  class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input id="updateInventoryItemNumber" type="text" class="form-control" placeholder="@Alapadatok.UpdateInventoryItemNumber">
+                        <input id="updateInventoryItemNumber" type="text" ng-model="FindItemNumber" class="form-control" placeholder="@Alapadatok.UpdateInventoryItemNumber">
                         <div class="input-group-append">
-                            <button id="updateInventoryBtnSearchByItemNumber" class="btn btn-secondary" type="button">Src</button>
+                            <button id="updateInventoryBtnSearchByItemNumber" ng-click="SearchByItemNumber(FindItemNumber)" class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input id="updateInventoryItemName" type="text" class="form-control" placeholder="@Alapadatok.UpdateInventoryItemName">
+                        <input id="updateInventoryItemName" type="text" ng-model="FindItemName" class="form-control" placeholder="@Alapadatok.UpdateInventoryItemName">
                         <div class="input-group-append">
-                            <button id="updateInventoryBtnSearchByItemName" class="btn btn-secondary" type="button">Src</button>
+                            <button id="updateInventoryBtnSearchByItemName" ng-click="SearchByItemName(FindItemName)" class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
@@ -34,11 +34,11 @@
         <div class="col-3">
             @*Update button*@
             <div class="row">
-                <button id="updateInventoryBtnUpload" class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button">@Alapadatok.UpdateInventoryUpload</button>
+                <button id="updateInventoryBtnUpload" ng-click="ActivateUploadFunctions()" class="btn btn-block btn-outline-secondary active updateInventoryFunctionButtons" type="button">@Alapadatok.UpdateInventoryUpload</button>
             </div>
             @*Search button*@
             <div class=" row">
-                <button id="updateInventoryBtnSearch" class="btn btn-block btn-secondary updateInventoryFunctionButtons" type="button">@Alapadatok.UpdateInventorySearch</button>
+                <button id="updateInventoryBtnSearch" ng-click="ActivateSearchFunctions()" class="btn btn-block btn-outline-secondary updateInventoryFunctionButtons" type="button">@Alapadatok.UpdateInventorySearch</button>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="row" id="itemResultContainer">
+    <div class="row" id="itemResultContainer" ng-show="ItemModelList.length > 1">
         <div class="col-12">
             <table class="table">
                 <thead>
@@ -56,15 +56,15 @@
                         <th id="updateInventoryTblHeaderBarCode">@Alapadatok.TableHeaderBarCode</th>
                         <th id="updateInventoryTblHeaderItemNumber">@Alapadatok.TableHeaderItemNumber</th>
                         <th id="updateInventoryTblHeaderItemName">@Alapadatok.TableHeaderItemName</th>
-                        <th id="updateInventoryTblHeaderItemCount">@Alapadatok.TableHeaderItemCount</th>
+                        <th id="updateInventoryTblHeaderItemCount" ng-show="IsSearchEnabled">@Alapadatok.TableHeaderItemCount</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in ItemModelList track by $index">
+                    <tr ng-repeat="item in ItemModelList track by $index" ng-click="OpenModal(item)">
                         <td id="updateInventoryTblDataBarCode_{{$index}}">{{item.barCode}}</td>
                         <td id="updateInventoryTblDataItemNumber_{{$index}}">{{item.itemNumber}}</td>
                         <td id="updateInventoryTblDataItemName_{{$index}}">{{item.itemName}}</td>
-                        <td id="updateInventoryTblDataItemCount_{{$index}}" style="text-align:right;">{{item.itemCount}}</td>
+                        <td ng-show="IsSearchEnabled" id="updateInventoryTblDataItemCount_{{$index}}" style="text-align:right;">{{item.itemCount}}</td>
                     </tr>
                 </tbody>
             </table>

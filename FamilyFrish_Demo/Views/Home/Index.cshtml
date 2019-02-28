@@ -25,10 +25,18 @@
         @Html.Partial("~/Views/Partial/UpdateInventoryForm.cshtml")
     </div>
 
-    <div class="row" ng-hide="true">
+    <div class="row">
         @Html.Partial("~/Views/Partial/UpdateItemModal.cshtml")
         @Html.Partial("~/Views/Partial/SearchItemModal.cshtml")
         @Html.Partial("~/Views/Partial/YesNoModal.cshtml")
+    </div>
+
+    <div id="globalInformations">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div uib-alert dismiss-on-timeout="{{alertsTimeout}}" ng-repeat="alert in modalAlerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeModalAlert($index)">{{alert.msg}}</div>
+            </div>
+        </div>
     </div>
 
     </div>

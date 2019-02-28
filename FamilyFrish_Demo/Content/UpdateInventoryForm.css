@@ -6,7 +6,7 @@
   margin-right: 10px;
 }
 #UpdateInventoryInputsContainer {
-  border: 1px solid black;
+  border: 1px solid #bfbfbf;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -14,10 +14,10 @@
   margin-right: 3px;
 }
 #UpdateInventoryContainer {
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #bfbfbf;
+  border-right: 1px solid #bfbfbf;
+  border-left: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
   padding-top: 15px;
   padding-bottom: 25px;
 }
@@ -30,54 +30,24 @@
 #itemResultContainer {
   margin-top: 25px;
   padding-top: 15px;
-  -webkit-animation-name: fadeInResult;
-  /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 1s;
-  /* Safari 4.0 - 8.0 */
-  animation-name: fadeInResult;
-  animation-duration: 1s;
-  -webkit-transition: opacity 1s, margin 1s;
-  /* Safari */
-  transition: opacity 1s, margin 1s;
 }
 #itemResultContainer table {
-  border: 1px solid black;
+  border: 0px solid #bfbfbf;
 }
 #itemResultContainer table tr td {
   font-size: 70%;
   cursor: pointer;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #bfbfbf;
 }
 #itemResultContainer table thead {
   background-color: dimgray;
   color: white;
-  border-top: 3px solid black;
-  border-bottom: 3px solid black;
-  border-left: 3px solid black;
-  border-right: 3px solid black;
+  border-top: 0px solid black;
+  border-bottom: 0px solid black;
+  border-left: 0px solid black;
+  border-right: 0px solid black;
   font-size: 75%;
 }
 #itemResultContainer table tr:nth-child(2n) {
   background-color: lightgray;
-}
-/*itemResultContainer animations*/
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes fadeInResult {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/* Standard syntax */
-@keyframes fadeInResult {
-  from {
-    opacity: 0;
-    margin-top: 50px;
-  }
-  to {
-    opacity: 1;
-    margin-top: 25px;
-  }
 }

@@ -178,6 +178,15 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Felhasználó: .
+        /// </summary>
+        public static string LoginHeader {
+            get {
+                return ResourceManager.GetString("LoginHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bejelentkezés.
         /// </summary>
         public static string LoginHeaderMessage {
@@ -502,11 +511,56 @@ namespace FamilyFrish_Demo.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Biztosan szeretné törölni a kiválasztott cikket?.
+        /// </summary>
+        public static string YesNoModalDeleteItem {
+            get {
+                return ResourceManager.GetString("YesNoModalDeleteItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biztosan szereté zárolni a leltár bejegyzést?.
+        /// </summary>
+        public static string YesNoModalLockInventory {
+            get {
+                return ResourceManager.GetString("YesNoModalLockInventory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valóban ki szeretne jelentkezni?.
+        /// </summary>
+        public static string YesNoModalLogOut {
+            get {
+                return ResourceManager.GetString("YesNoModalLogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biztosan szeretné módosítani a kiválasztott cikket?.
+        /// </summary>
+        public static string YesNoModalModifyItem {
+            get {
+                return ResourceManager.GetString("YesNoModalModifyItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nem.
         /// </summary>
         public static string YesNoModalNo {
             get {
                 return ResourceManager.GetString("YesNoModalNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biztosan szeretné rögzíteni a cikket?.
+        /// </summary>
+        public static string YesNoModalUpdateitem {
+            get {
+                return ResourceManager.GetString("YesNoModalUpdateitem", resourceCulture);
             }
         }
         

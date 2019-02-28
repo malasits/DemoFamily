@@ -270,4 +270,22 @@
   <data name="WarnNoOpenInventory" xml:space="preserve">
     <value>Nincs nyitott leltár!</value>
   </data>
+  <data name="YesNoModalDeleteItem" xml:space="preserve">
+    <value>Biztosan szeretné törölni a kiválasztott cikket?</value>
+  </data>
+  <data name="YesNoModalModifyItem" xml:space="preserve">
+    <value>Biztosan szeretné módosítani a kiválasztott cikket?</value>
+  </data>
+  <data name="YesNoModalUpdateitem" xml:space="preserve">
+    <value>Biztosan szeretné rögzíteni a cikket?</value>
+  </data>
+  <data name="LoginHeader" xml:space="preserve">
+    <value>Felhasználó: </value>
+  </data>
+  <data name="YesNoModalLogOut" xml:space="preserve">
+    <value>Valóban ki szeretne jelentkezni?</value>
+  </data>
+  <data name="YesNoModalLockInventory" xml:space="preserve">
+    <value>Biztosan szereté zárolni a leltár bejegyzést?</value>
+  </data>
 </root>

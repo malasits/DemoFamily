@@ -1,10 +1,10 @@
-﻿@borderColor: black;
+﻿@borderColor: #bfbfbf;
 @tableHeaderBackgroundColor: dimgray;
 @tableHeaderFontColor: white;
 @tableHeaderBorderColor:black;
 @tableRowBackgroundColor: lightgray;
-@tableResultBorderColor: black;
-@tableResultRowBorderColor:black;
+@tableResultBorderColor: #bfbfbf;
+@tableResultRowBorderColor: #bfbfbf;
 
 .updateInventoryFunctionButtons{
     margin-top:0px;
@@ -43,16 +43,10 @@
 #itemResultContainer {
     margin-top: 25px;
     padding-top: 15px;
-    -webkit-animation-name: fadeInResult; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-name: fadeInResult;
-    animation-duration: 1s;
-    -webkit-transition: opacity 1s, margin 1s; /* Safari */
-    transition: opacity 1s, margin 1s;
 }
 
 #itemResultContainer table {
-    border: 1px solid @tableResultBorderColor;
+    border: 0px solid @tableResultBorderColor;
 }
 
 #itemResultContainer table tr td {
@@ -64,40 +58,13 @@
 #itemResultContainer table thead {
     background-color: @tableHeaderBackgroundColor;
     color: @tableHeaderFontColor;
-    border-top: 3px solid @tableHeaderBorderColor;
-    border-bottom: 3px solid @tableHeaderBorderColor;
-    border-left: 3px solid @tableHeaderBorderColor;
-    border-right: 3px solid @tableHeaderBorderColor;
+    border-top: 0px solid @tableHeaderBorderColor;
+    border-bottom: 0px solid @tableHeaderBorderColor;
+    border-left: 0px solid @tableHeaderBorderColor;
+    border-right: 0px solid @tableHeaderBorderColor;
     font-size: 75%;
 }
 
 #itemResultContainer table tr:nth-child(2n) {
     background-color: @tableRowBackgroundColor;
-}
-
-
-/*itemResultContainer animations*/
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes fadeInResult {
-    from {
-        opacity:0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Standard syntax */
-@keyframes fadeInResult {
-    from {
-        opacity: 0;
-        margin-top: 50px;
-    }
-
-    to {
-        opacity: 1;
-        margin-top: 25px;
-    }
 }

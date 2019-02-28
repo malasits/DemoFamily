@@ -1,100 +1,105 @@
 ﻿@using FamilyFrish_Demo.Resources;
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchItemModalContainer">
-   SearchItemModal
-</button>
-
 <div class="modal fade" id="searchItemModalContainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
 
                 @*Modal spinner*@
-                <div id="searchItemModalSpinner" ng-hide="false" class="d-flex justify-content-center text-center">
+                <div id="searchItemModalSpinner" ng-show="IsDeleteInProgress || IsModifyInProgress" class="d-flex justify-content-center text-center">
                     <div class="spinner-border customSpinner" role="status">
                     </div>
                 </div>
+                
+                <div id="searchItemModaContent" ng-show="!IsDeleteInProgress && !IsModifyInProgress">
+                    <div class="row">
+                        <div class="col-2">
+                            <label id="searchItemModalLblBarCode">@Alapadatok.SearchItemModalBarCode</label>
+                        </div>
+                        <div class="col-10">
+                            <input id="searchItemModalBarCode" type="text" class="form-control" ng-model="ItemModalModel.barCode" disabled />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label id="searchItemModalLblItemNumber">@Alapadatok.SearchItemModalItemNumber</label>
+                        </div>
+                        <div class="col-10">
+                            <input id="searchItemModalItemNumber" type="text" class="form-control" ng-model="ItemModalModel.itemNumber" disabled />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <label id="searchItemModalLblItemName">@Alapadatok.SearchItemModalItemName</label>
+                        </div>
+                        <div class="col-10">
+                            <input id="searchItemModalItemName" type="text" class="form-control" ng-model="ItemModalModel.itemName" disabled />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label id="searchItemModalLblFindCount">@Alapadatok.SearchItemModalFindCount</label>
+                        </div>
+                        <div class="col-4">
+                            <input id="searchItemModalFindCount" type="number" class="form-control" ng-model="ItemModalModel.itemCount" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label id="searchItemModalLblComment">@Alapadatok.SearchItemModalComment</label>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="searchItemModalComment" class="form-control" rows="3" id="comment" ng-model="ItemModalModel.comment"></textarea>
+                        </div>
+                    </div>
 
-                <div class="row">
-                    <div class="col-2">
-                        <label id="searchItemModalLblBarCode">@Alapadatok.SearchItemModalBarCode</label>
+                    <div class="row">
+                        <div class="col-5">
+                            <label id="searchItemModalLblItemUserame">@Alapadatok.SearchItemModalItemUserame</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="searchItemModalItemUserame" type="text" class="form-control" ng-model="ItemModalModel.username" disabled />
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <input id="searchItemModalBarCode" type="text" class="form-control" ng-model="ItemModalModel.barCode" disabled />
+                    <div class="row">
+                        <div class="col-5">
+                            <label id="searchItemModalLblItemCommitDate">@Alapadatok.SearchItemModalItemCommitDate</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="searchItemModalItemCommitDate" type="text" class="form-control" ng-model="ItemModalModel.commitDate" disabled />
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label id="searchItemModalLblItemNumber">@Alapadatok.SearchItemModalItemNumber</label>
+                    <div class="row">
+                        <div class="col-5">
+                            <label id="searchItemModalLblItemLastModifiedUsername">@Alapadatok.SearchItemModalItemLastModifiedUsername</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="searchItemModalItemLastModifiedUsername" type="text" class="form-control" ng-model="ItemModalModel.lastModifiedUsername" disabled />
+                        </div>
                     </div>
-                    <div class="col-10">
-                        <input id="searchItemModalItemNumber" type="text" class="form-control" ng-model="ItemModalModel.itemNumber" disabled />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label id="searchItemModalLblItemName">@Alapadatok.SearchItemModalItemName</label>
-                    </div>
-                    <div class="col-10">
-                        <input id="searchItemModalItemName" type="text" class="form-control" ng-model="ItemModalModel.itemName" disabled />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <label id="searchItemModalLblFindCount">@Alapadatok.SearchItemModalFindCount</label>
-                    </div>
-                    <div class="col-4">
-                        <input id="searchItemModalFindCount" type="number" class="form-control" ng-model="ItemModalModel.itemCount" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <label id="searchItemModalLblComment">@Alapadatok.SearchItemModalComment</label>
-                    </div>
-                    <div class="col-12">
-                        <textarea id="searchItemModalComment" class="form-control" rows="3" id="comment" ng-model="ItemModalModel.comment"></textarea>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-5">
-                        <label id="searchItemModalLblItemUserame">@Alapadatok.SearchItemModalItemUserame</label>
-                    </div>
-                    <div class="col-7">
-                        <input id="searchItemModalItemUserame" type="text" class="form-control" ng-model="ItemModalModel.username" disabled />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <label id="searchItemModalLblItemCommitDate">@Alapadatok.SearchItemModalItemCommitDate</label>
-                    </div>
-                    <div class="col-7">
-                        <input id="searchItemModalItemCommitDate" type="text" class="form-control" ng-model="ItemModalModel.commitDate" disabled />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <label id="searchItemModalLblItemLastModifiedUsername">@Alapadatok.SearchItemModalItemLastModifiedUsername</label>
-                    </div>
-                    <div class="col-7">
-                        <input id="searchItemModalItemLastModifiedUsername" type="text" class="form-control" ng-model="ItemModalModel.lastModifiedUsername" disabled />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-5">
-                        <label id="searchItemModalLblItemLastModifiedDate">@Alapadatok.SearchItemModalItemLastModifiedDate</label>
-                    </div>
-                    <div class="col-7">
-                        <input id="searchItemModalItemLastModifiedDate" type="text" class="form-control" ng-model="ItemModalModel.lastModifiedDate" disabled />
+                    <div class="row">
+                        <div class="col-5">
+                            <label id="searchItemModalLblItemLastModifiedDate">@Alapadatok.SearchItemModalItemLastModifiedDate</label>
+                        </div>
+                        <div class="col-7">
+                            <input id="searchItemModalItemLastModifiedDate" type="text" class="form-control" ng-model="ItemModalModel.lastModifiedDate" disabled />
+                        </div>
                     </div>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button id="searchItemModalBtnCancel" type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">@Alapadatok.UpdateItemModalCancel</button>
-                <button id="searchItemModalBtnDelete" type="button" class="btn btn-danger">@Alapadatok.SearchItemModalDelete</button>
-                <button id="searchItemModalBtnDone" type="button" class="btn btn-success">@Alapadatok.UpdateItemModalDone</button>
+                <div class="row">
+                    <div class="col-8">
+                        <button id="searchItemModalBtnCancel" type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">@Alapadatok.UpdateItemModalCancel</button>
+                    </div>
+                    <div class="col-2">
+                        <button id="searchItemModalBtnDelete" ng-click="DeleteItem(ItemModalModel)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#yesNoModalContainer">@Alapadatok.SearchItemModalDelete</button>
+                    </div>
+                    <div class="col-2">
+                        <button id="searchItemModalBtnDone" ng-click="ModifyItem(ItemModalModel)" type="button" class="btn btn-success" data-toggle="modal" data-target="#yesNoModalContainer">@Alapadatok.UpdateItemModalDone</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

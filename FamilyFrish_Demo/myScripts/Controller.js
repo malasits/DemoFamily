@@ -55,7 +55,7 @@
     //TODO: kikötni az appból
     $scope.InventoryModel2 = {
         inventoryId: "Leltar_TESZT",
-        warehouse: "R1 (Teszt)",
+        warehouse: "R2 (Teszt)",
         inventoryRecordBegin: "2018.12.27",
         inventoryRecordEnd: "2018.12.28",
         numberOfFixedItems: 15,
@@ -69,20 +69,12 @@
     $scope.InventoryModelList.push($scope.InventoryModel2);
 
     //Variables for inventory update form
+    $scope.IsUpdateEnabled = true;
+    $scope.IsSearchEnabled = false;
+    $scope.FindBarCode;
+    $scope.FindItemNumber = "";
+    $scope.FindItemName = "";
     $scope.ItemModel = {
-        barCode: "599134567890",
-        itemNumber: "1-154-15-123465",
-        itemName: "Unikum szilva 0.5L | 35%",
-        itemCount: 5
-    };
-    $scope.ItemModelList = [];
-    $scope.ItemModelList.push($scope.ItemModel);
-    $scope.ItemModelList.push($scope.ItemModel);
-    $scope.ItemModelList.push($scope.ItemModel);
-    $scope.ItemModelList.push($scope.ItemModel);
-
-    //Variables for search/update item modal
-    $scope.ItemModalModel = {
         barCode: "599134567890",
         itemNumber: "1-154-15-123465",
         itemName: "Unikum szilva 0.5L | 35%",
@@ -93,12 +85,24 @@
         lastModifiedUsername: "Bekő Tóni",
         lastModifiedDate: "2018.02.16 10:43:21"
     };
+    $scope.ItemModelList = [];
+    $scope.ItemModelList.push($scope.ItemModel);
+    $scope.ItemModelList.push($scope.ItemModel);
+    $scope.ItemModelList.push($scope.ItemModel);
+    $scope.ItemModelList.push($scope.ItemModel);
+    
+    //Variables for search/update item modal
+    $scope.IsUploadInProgress = false;
+    $scope.IsDeleteInProgress = false;
+    $scope.IsModifyInProgress = false;
+    $scope.ItemModalModel = {
+    };
 
     //Variables for yes/no modal
     $scope.YesNoModalModel = {
-        text: "Biztosan szeretné törölni a rögzített terméket?",
-        function: "DeleteItem",
-        barCode: "599134567890"
+        text: "",
+        function: "",
+        itemModel: {}
     };
 
     //****************************************************/
@@ -111,6 +115,7 @@
             function: "root"
         };
         $scope.NavItems.push($scope.RootMenu);
+        
     };
     $scope.Init();
 
@@ -133,9 +138,6 @@
     $rootScope.modalAlert = function (type, msg) {
         $rootScope.modalAlerts.push({ msg: msg, type: type });
     };
-    
-
-
 
 
     //*******************************************/
@@ -151,6 +153,7 @@
             //TODO: Lecserélni login service hívásra
             if ($scope.Username === "asd" && $scope.Password === "asd") {
 
+                $scope.HeaderMessage = $filter('translate')('LoginHeader') + "Hüvelyk Matyi";
                 $scope.InvalidUser = false;
                 $scope.UserLoggedIn = true;
                 $scope.InvalidPremission = false;
@@ -181,8 +184,23 @@
         }
     };
 
-
-
+    //***********************************************/
+    //*   Log out from application                  */
+    //***********************************************/
+    $scope.LogOut = function () {
+        $scope.ShowLoginSpinner = false;
+        $scope.HeaderMessage = $filter('translate')('LoginHeaderMessage');
+        $scope.UserLoggedIn = false;
+        $scope.ShowFunctionsForm = false;
+        $scope.ShowRecordingForm = false;
+        $scope.ShowUpdateInventoryForm = false;
+        $scope.LoginFormValid = false;
+        $scope.DisableLoginButton = false;
+        $rootScope.alerts = [];
+        $rootScope.modalAlerts = [];
+        $scope.ClickOnMenuItem({ function: "root" });
+        $scope.NavItems.splice(1, $scope.NavItems.length);
+    };
 
 
     //****************************************************/
@@ -237,6 +255,9 @@
         }
     };
 
+    //****************************************************/
+    //*   Open the selected inventory                    */
+    //****************************************************/
     $scope.OpenInventory = function (inventoryId, warehouse) {
         var newNavItem = {
             title: inventoryId + "(" + warehouse + ")",
@@ -248,18 +269,188 @@
         $scope.ShowFunctionsForm = false;
         $scope.ShowRecordingForm = false;
         $scope.ShowUpdateInventoryForm = true;
+        $scope.ActivateUploadFunctions();
+    };
+
+    //****************************************************/
+    //*   Lock the selected inventory                    */
+    //****************************************************/
+    $scope.LockInventory = function (inventoryModel) {
+        $scope.YesNoModalModel = {};
+        $scope.YesNoModalModel = {
+            text: $filter('translate')('YesNoModalLockInventory'),
+            function: "lockInventory",
+            selectedItemModel: inventoryModel
+        };
+        $('#yesNoModalContainer').modal('show');
+    };
+
+    //****************************************************/
+    //*   Activate upload functions on update form       */
+    //****************************************************/
+    $scope.ActivateUploadFunctions = function () {
+        angular.element(document.querySelector('#updateInventoryBtnUpload')).addClass("active");
+        angular.element(document.querySelector('#updateInventoryBtnSearch')).removeClass("active");
+        $scope.IsSearchEnabled = false;
+        $scope.IsUpdateEnabled = true;
+        //$scope.ItemModelList = [];
+    };
+
+    //****************************************************/
+    //*   Activate search functions on update form       */
+    //****************************************************/
+    $scope.ActivateSearchFunctions = function () {
+        angular.element(document.querySelector('#updateInventoryBtnSearch')).addClass("active");
+        angular.element(document.querySelector('#updateInventoryBtnUpload')).removeClass("active");
+        $scope.IsSearchEnabled = true;
+        $scope.IsUpdateEnabled = false;
+        //$scope.ItemModelList = [];
+    };
+
+    //****************************************************/
+    //*   Search items by bar code                       */
+    //****************************************************/
+    $scope.SearchByBarcode = function (barCode) {
+        angular.element(document.querySelector('#updateInventoryBtnSearchByBarCode')).prop('disabled', true);
+        angular.element(document.querySelector('#updateInventoryBtnSearchByItemNumber')).prop('disabled', true);
+        angular.element(document.querySelector('#updateInventoryBtnSearchByItemName')).prop('disabled', true);
+    };
+
+    //****************************************************/
+    //*   Search items by item number                    */
+    //****************************************************/
+    $scope.SearchByItemNumber = function (itemNumber) {
+        angular.element(document.querySelector('#updateInventoryBtnSearchByBarCode')).prop('disabled', true);
+        angular.element(document.querySelector('#updateInventoryBtnSearchByItemNumber')).prop('disabled', true);
+        angular.element(document.querySelector('#updateInventoryBtnSearchByItemName')).prop('disabled', true);
+    };
+
+    //****************************************************/
+    //*   Search items by item name                      */
+    //****************************************************/
+    $scope.SearchByItemName = function (itemName) {
+        angular.element(document.querySelector('#updateInventoryBtnSearchByBarCode')).prop('disabled', true);
+        angular.element(document.querySelector('#updateInventoryBtnSearchByItemNumber')).prop('disabled', true);
+        angular.element(document.querySelector('#updateInventoryBtnSearchByItemName')).prop('disabled', true);
+    };
+
+    //****************************************************/
+    //*   Open modal from resoult table                  */
+    //****************************************************/
+    $scope.OpenModal = function (itemModel) {
+
+        $scope.ItemModalModel = {};
+        $scope.ItemModalModel = itemModel;
+
+        //Ha update van aktiválva
+        if ($scope.IsUpdateEnabled) {
+            $('#updateItemModalContainer').modal('show');
+        }
+        //Ha a search van aktiválva
+        else if ($scope.IsSearchEnabled) {
+            $('#searchItemModalContainer').modal('show');
+        }
+    };
+
+    //****************************************************/
+    //*   Update item from modal                         */
+    //****************************************************/
+    $scope.UpdateItem = function (itemModel) {
+        $scope.YesNoModalModel = {};
+        $scope.YesNoModalModel = {
+            text: $filter('translate')('YesNoModalUpdateitem'),
+            function: "updateItem",
+            selectedItemModel: itemModel
+        };
+    };
+
+    //****************************************************/
+    //*   Delete item from modal                         */
+    //****************************************************/
+    $scope.DeleteItem = function (itemModel) {
+        $scope.YesNoModalModel = {};
+        $scope.YesNoModalModel = {
+            text: $filter('translate')('YesNoModalDeleteItem'),
+            function: "deleteItem",
+            selectedItemModel: itemModel
+        };
     };
 
 
-
-    $scope.asd = function () {
-        angular.element(document.querySelector('#itemResultContainer')).css("opacity", "0");
-        angular.element(document.querySelector('#itemResultContainer')).css("margin-top", "50px");
+    //****************************************************/
+    //*   Modify item from modal                         */
+    //****************************************************/
+    $scope.ModifyItem = function (itemModel) {
+        $scope.YesNoModalModel = {};
+        $scope.YesNoModalModel = {
+            text: $filter('translate')('YesNoModalModifyItem'),
+            function: "modifyItem",
+            selectedItemModel: itemModel
+        };
     };
 
-    $scope.asd2 = function () {
-        angular.element(document.querySelector('#itemResultContainer')).css("opacity", "1");
-        angular.element(document.querySelector('#itemResultContainer')).css("margin-top", "25px");
+    //****************************************************/
+    //*   Call modal if user would like to log out       */
+    //****************************************************/
+    $scope.LogOutModal = function () {
+        $scope.YesNoModalModel = {};
+        $scope.YesNoModalModel = {
+            text: $filter('translate')('YesNoModalLogOut'),
+            function: "logOut",
+            selectedItemModel: {}
+        };
+        $('#yesNoModalContainer').modal('show');
     };
-    
+
+    //****************************************************/
+    //*   Controll yes/no modal                          */
+    //****************************************************/
+    $scope.ControllYesNoModal = function () {
+
+        $('#yesNoModalContainer').modal('hide');
+
+        switch ($scope.YesNoModalModel.function) {
+            case "updateItem": {
+
+               //TODO: Update szervíz hívása
+                $scope.IsUploadInProgress = true;
+                angular.element(document.querySelector('#updateItemModalBtnDone')).prop('disabled', true);
+                $rootScope.modalAlert("success","Cikk rögzítése sikerresen megtörtént!");
+                break;
+            }
+            case "deleteItem": {
+
+                //TODO: Delete szervíz hívása
+                $scope.IsDeleteInProgress = true;
+                angular.element(document.querySelector('#searchItemModalBtnDelete')).prop('disabled', true);
+                angular.element(document.querySelector('#searchItemModalBtnDone')).prop('disabled', true);
+                break;
+            }
+            case "modifyItem": {
+
+                //TODO: Modify szervíz hívása
+                $scope.IsModifyInProgress = true;
+                angular.element(document.querySelector('#searchItemModalBtnDelete')).prop('disabled', true);
+                angular.element(document.querySelector('#searchItemModalBtnDone')).prop('disabled', true);
+                break;
+            }
+
+            case "logOut": {
+
+                $scope.LogOut();
+                break;
+            }
+
+            case "lockInventory": {
+                //Todo Lock inventory service
+                break;
+            }
+        }
+        
+    };
+
+    //****************************************************/
+    //*   Services calls                                 */
+    //****************************************************/
+
 });

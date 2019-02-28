@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-6">
-            <button id="inventoryBtnClose_{{$index}}" class="btn btn-danger">@Alapadatok.InventoryRecordClose</button>
+            <button id="inventoryBtnClose_{{$index}}" class="btn btn-danger" ng-click="LockInventory(item)">@Alapadatok.InventoryRecordClose</button>
         </div>
         <div class="col-6">
             <button id="inventoryBtnOpen_{{$index}}" class="btn btn-success" ng-click="OpenInventory(item.inventoryId, item.warehouse)">@Alapadatok.InventoryRecordOpen</button>

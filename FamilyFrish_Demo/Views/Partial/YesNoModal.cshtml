@@ -1,10 +1,4 @@
-﻿
-@using FamilyFrish_Demo.Resources;
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yesNoModalContainer">
-    yesNoModal
-</button>
+﻿@using FamilyFrish_Demo.Resources;
 
 
 <div class="modal fade" id="yesNoModalContainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -18,8 +12,15 @@
                 <label id="yesNoModalLbltext">{{YesNoModalModel.text}}</label>
             </div>
             <div class="modal-footer">
-                <button id="yesNoModalBtnNo" type="button" class="btn btn-danger mr-auto" data-dismiss="modal">@Alapadatok.YesNoModalNo</button>
-                <button id="yesNoModalBtnYes" type="button" class="btn btn-success">@Alapadatok.YesNoModalYes</button>
+                <div class="row">
+                    <div class="offset-4 col-2">
+                        <button id="yesNoModalBtnNo" type="button" class="btn btn-danger mr-auto" data-dismiss="modal">@Alapadatok.YesNoModalNo</button>
+                    </div>
+                    <div class="col-2">
+                        <button id="yesNoModalBtnYes" ng-click="ControllYesNoModal()" type="button" class="btn btn-success">@Alapadatok.YesNoModalYes</button>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

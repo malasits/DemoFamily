@@ -1,5 +1,4 @@
-﻿/*@headerBackgroundColor: #0d0d0d;*/
-body {
+﻿body {
   padding-left: 20px;
   padding-right: 20px;
   max-width: 720px;
@@ -37,4 +36,21 @@ header img {
   .container {
     max-width: 1200px;
   }
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 720px;
+    margin: 1.75rem auto;
+  }
+}
+#globalInformations {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  right: 0px;
+  -webkit-transition: display 2s;
+  transition: display 2s;
+}
+.modal-footer {
+  display: block !important;
 }
