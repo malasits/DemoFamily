@@ -145,7 +145,7 @@
     <value>Leltár tervezett vége:</value>
   </data>
   <data name="InventoryRecordOpen" xml:space="preserve">
-    <value>Rögzízés megnyitása</value>
+    <value>Rögzítés megnyitása</value>
   </data>
   <data name="InventoryState" xml:space="preserve">
     <value>Státusz:</value>
@@ -287,5 +287,17 @@
   </data>
   <data name="YesNoModalLockInventory" xml:space="preserve">
     <value>Biztosan szereté zárolni a leltár bejegyzést?</value>
+  </data>
+  <data name="InventoryStateClose" xml:space="preserve">
+    <value>Zárt</value>
+  </data>
+  <data name="InventoryStateOpen" xml:space="preserve">
+    <value>Nyitott</value>
+  </data>
+  <data name="ErrorItemCount" xml:space="preserve">
+    <value>Mennyiség megadása kötelező!</value>
+  </data>
+  <data name="MenuItemInventoryRecording" xml:space="preserve">
+    <value>Leltár rögzítés</value>
   </data>
 </root>

@@ -41,7 +41,15 @@
                             <label id="searchItemModalLblFindCount">@Alapadatok.SearchItemModalFindCount</label>
                         </div>
                         <div class="col-4">
-                            <input id="searchItemModalFindCount" type="number" class="form-control" ng-model="ItemModalModel.itemCount" />
+                            <input id="searchItemModalFindCount" type="number" class="form-control" ng-model="ItemModalModel.itemCount" ng-disabled="IsInventoryLocked" />
+                        </div>
+                    </div>
+                    @*CountRequired error message*@
+                    <div class="row">
+                        <div class="offset-4 col-8">
+                            <div id="searchItemModalFindCountErrorMessage" ng-messages="{'required': !ItemModalModel.itemCount}" class="text-danger" role="alert">
+                                <div ng-message="required">@Alapadatok.ErrorItemCount</div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -49,7 +57,7 @@
                             <label id="searchItemModalLblComment">@Alapadatok.SearchItemModalComment</label>
                         </div>
                         <div class="col-12">
-                            <textarea id="searchItemModalComment" class="form-control" rows="3" id="comment" ng-model="ItemModalModel.comment"></textarea>
+                            <textarea id="searchItemModalComment" class="form-control" rows="3" ng-model="ItemModalModel.comment" ng-disabled="IsInventoryLocked"></textarea>
                         </div>
                     </div>
 
@@ -91,13 +99,13 @@
             <div class="modal-footer">
                 <div class="row">
                     <div class="col-8">
-                        <button id="searchItemModalBtnCancel" type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">@Alapadatok.UpdateItemModalCancel</button>
+                        <button id="searchItemModalBtnCancel" ng-click="CloseModal()" type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">@Alapadatok.UpdateItemModalCancel</button>
                     </div>
                     <div class="col-2">
-                        <button id="searchItemModalBtnDelete" ng-click="DeleteItem(ItemModalModel)" type="button" class="btn btn-danger" data-toggle="modal" data-target="#yesNoModalContainer">@Alapadatok.SearchItemModalDelete</button>
+                        <button id="searchItemModalBtnDelete" ng-show="!IsInventoryLocked" ng-click="DeleteItem(ItemModalModel)" type="button" class="btn btn-danger">@Alapadatok.SearchItemModalDelete</button>
                     </div>
                     <div class="col-2">
-                        <button id="searchItemModalBtnDone" ng-click="ModifyItem(ItemModalModel)" type="button" class="btn btn-success" data-toggle="modal" data-target="#yesNoModalContainer">@Alapadatok.UpdateItemModalDone</button>
+                        <button id="searchItemModalBtnDone" ng-show="!IsInventoryLocked" ng-click="ModifyItem(ItemModalModel)" type="button" class="btn btn-success">@Alapadatok.UpdateItemModalDone</button>
                     </div>
                 </div>
             </div>

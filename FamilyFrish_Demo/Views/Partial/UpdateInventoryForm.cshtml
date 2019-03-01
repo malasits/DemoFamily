@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="input-group mb-3">
-                        <input id="updateInventoryBarCode" type="number" ng-model="FindBarCode" class="form-control" placeholder="@Alapadatok.UpdateInventoryBarCode" autofocus>
+                        <input id="updateInventoryBarCode" type="number" ng-model="FindBarCode" class="form-control" placeholder="@Alapadatok.UpdateInventoryBarCode">
                         <div class="input-group-append">
                             <button id="updateInventoryBtnSearchByBarCode" ng-click="SearchByBarcode(FindBarCode)"  class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
@@ -43,12 +43,14 @@
         </div>
     </div>
 
-    <div id="updateInventrorySpinner" ng-hide="true" class="d-flex justify-content-center">
-        <div class="spinner-border customSpinner" role="status">
+    <div style="margin-top:50px;" ng-show="IsSearchInProgress">
+        <div id="updateInventrorySpinner" class="d-flex justify-content-center">
+            <div class="spinner-border customSpinner" role="status">
+            </div>
         </div>
     </div>
 
-    <div class="row" id="itemResultContainer" ng-show="ItemModelList.length > 1">
+    <div class="row" id="itemResultContainer" ng-show="ItemModelList.length > 1 && !IsSearchInProgress">
         <div class="col-12">
             <table class="table">
                 <thead>
